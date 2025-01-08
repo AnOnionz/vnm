@@ -116,18 +116,15 @@ class _HomePageState extends State<HomePage> with GeneralDataMixin, UserMixin {
                   children: [
                     _title(context, 'Thông tin chung'),
                     Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 29.h, horizontal: 16.w),
+                        padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 40.h),
                         child: CommonInfo(general: general)),
                     _title(context, 'Chức năng hỗ trợ'),
                     Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 29.h, horizontal: 16.w),
+                        padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 40.h),
                         child: CommonFeature()),
                     _title(context, 'Danh sách công việc'),
                     Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 29.h, horizontal: 16.w),
+                        padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 20.h),
                         child: Tasks()),
                   ],
                 ),
