@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+import 'package:vnm/core/widgets/app_bar.dart';
+import 'package:vnm/features/app_information/presentation/widgets/row_info.dart';
+import 'package:vnm/features/general/presentation/page/mixin_general.dart';
+import 'package:vnm/features/profile/mixin_user.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+
+import '../../../../core/constant/images.dart';
+import '../../../../core/constant/keys.dart';
+import '../../../../core/environment/env.dart';
+import '../../../../core/styles/theme.dart';
+import '../widgets/information_box.dart';
+
+class AppInformationPage extends StatelessWidget
+    with GeneralDataMixin, UserMixin {
+  AppInformationPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final space = SizedBox(height: 12.h);
+
+    return Scaffold(
+      appBar: DefaultAppBar(title: 'Thông tin và ứng dụng'),
+      body: SingleChildScrollView(
+        physics: kPhysics,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 22.h,
+            ),
+            InformationBox(
+              icon: Image.asset(AppImages.outlet),
+              title: 'Thông tin outlet',
+              children: [
+                RowInfo(
+                    leading: 'Tên outlet', info: general!.outlet.name ?? ''),
+                space,
+                RowInfo(leading: 'Mã outlet', info: general!.outlet.code ?? ''),
+                space,
+                RowInfo(leading: 'Booth', info: general!.booth.name ?? ''),
+                space,
+                RowInfo(leading: 'Địa chỉ', info: general!.outlet.address)
+              ],
+            ),
+            InformationBox(
+              icon: Image.asset(AppImages.employee),
+              title: 'Thông tin nhân sự',
+              children: [
+                RowInfo(leading: 'Tên nhân sự', info: user!.name ?? ''),
+                space,
+                // RowInfo(leading: 'Mã nhân sự', info: 'MA0001'),
+                // space,
+                RowInfo(leading: 'SĐT', info: user!.phone ?? ''),
+                // space,
+                // RowInfo(leading: 'Địa chỉ', info: ''),
+              ],
+            ),
+            FutureBuilder<PackageInfo>(
+                future: PackageInfo.fromPlatform(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData && snapshot.data != null) {
+                    final packageInfo = snapshot.data!;
+                    return InformationBox(
+                      icon: Image.asset(AppImages.application),
+                      title: 'Thông tin phần mềm',
+                      children: [
+                        RowInfo(
+                            leading: 'Phiên bản app:',
+                            info: packageInfo.version),
+                        space,
+                        RowInfo(
+                            leading: 'Bản phát hành:',
+                            info: packageInfo.buildNumber),
+                        space,
+                        RowInfo(
+                            leading: 'Dự án',
+                            info: env.variables[Keys.APP_NAME] as String),
+                      ],
+                    );
+                  }
+                  return SizedBox.shrink();
+                }),
+            space
+          ],
+        ),
+      ),
+    );
+  }
+}

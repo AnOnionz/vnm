@@ -1,0 +1,7 @@
+{
+     "@@locale": "en",
+     "appName": "Field Management System",
+    "loginText":"Login", 
+    "loginDescription":"Lorem Ipsum is simply dummy text of the printing and",
+    "loginButtonText": "Login with account"
+}

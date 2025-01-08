@@ -1,0 +1,69 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:vnm/core/constant/enum.dart';
+import 'package:vnm/core/constant/icons.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:vnm/features/general/presentation/page/mixin_general.dart';
+import 'package:vnm/features/home/presentation/bloc/necessary_bloc.dart';
+import 'package:vnm/features/home/presentation/widgets/feature_box.dart';
+
+class CommonFeature extends StatefulWidget {
+  const CommonFeature({super.key});
+
+  @override
+  State<CommonFeature> createState() => _CommonFeatureState();
+}
+
+class _CommonFeatureState extends State<CommonFeature> with GeneralDataMixin {
+  late final tasks = general!.config.features
+      ?.where((feature) => feature.type != null && feature.type!.isAssistance)
+      .toList();
+
+  final double column = 4;
+  final double extendHeight = 84;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      // height: (tasks.length / column).ceil() * extendHeight,
+      child: CustomScrollView(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        slivers: [
+          SliverGrid.builder(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              mainAxisExtent: 110,
+              maxCrossAxisExtent: context.screenWidth / column,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 15,
+            ),
+            itemCount: tasks!.length,
+            itemBuilder: (context, index) {
+              final feature = tasks![index];
+              return FeatureBox(
+                icon: _getIcon(feature),
+                name: feature.name!,
+                onPressed: () => context
+                    .read<NecessaryBloc>()
+                    .add(NecessaryIn(feature: feature)),
+              );
+            },
+          )
+        ],
+      ),
+    );
+  }
+
+  String _getIcon(FeatureEntity feature) {
+    return switch (feature.type) {
+      FeatureType.synchronization => AppIcons.sync,
+      _ => AppIcons.statistic,
+    };
+  }
+}

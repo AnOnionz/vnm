@@ -1,0 +1,832 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'general_entity.dart';
+
+// **************************************************************************
+// IsarCollectionGenerator
+// **************************************************************************
+
+// coverage:ignore-file
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, prefer_const_constructors, lines_longer_than_80_chars, require_trailing_commas, inference_failure_on_function_invocation, unnecessary_parenthesis, unnecessary_raw_strings, unnecessary_null_checks, join_return_with_assignment, prefer_final_locals, avoid_js_rounded_ints, avoid_positional_boolean_parameters, always_specify_types
+
+extension GetGeneralEntityCollection on Isar {
+  IsarCollection<GeneralEntity> get generalEntitys => this.collection();
+}
+
+const GeneralEntitySchema = CollectionSchema(
+  name: r'GeneralEntity',
+  id: 7965206913433058300,
+  properties: {
+    r'attendance': PropertySchema(
+      id: 0,
+      name: r'attendance',
+      type: IsarType.object,
+      target: r'AttendanceEntity',
+    ),
+    r'booth': PropertySchema(
+      id: 1,
+      name: r'booth',
+      type: IsarType.object,
+      target: r'BoothEntity',
+    ),
+    r'config': PropertySchema(
+      id: 2,
+      name: r'config',
+      type: IsarType.object,
+      target: r'ConfigEntity',
+    ),
+    r'createdDate': PropertySchema(
+      id: 3,
+      name: r'createdDate',
+      type: IsarType.dateTime,
+    ),
+    r'identifer': PropertySchema(
+      id: 4,
+      name: r'identifer',
+      type: IsarType.string,
+    ),
+    r'outlet': PropertySchema(
+      id: 5,
+      name: r'outlet',
+      type: IsarType.object,
+      target: r'OutletEntity',
+    ),
+    r'project': PropertySchema(
+      id: 6,
+      name: r'project',
+      type: IsarType.object,
+      target: r'ProjectEntity',
+    )
+  },
+  estimateSize: _generalEntityEstimateSize,
+  serialize: _generalEntitySerialize,
+  deserialize: _generalEntityDeserialize,
+  deserializeProp: _generalEntityDeserializeProp,
+  idName: r'id',
+  indexes: {},
+  links: {},
+  embeddedSchemas: {
+    r'ProjectEntity': ProjectEntitySchema,
+    r'OutletEntity': OutletEntitySchema,
+    r'Province': ProvinceSchema,
+    r'District': DistrictSchema,
+    r'Ward': WardSchema,
+    r'ConfigEntity': ConfigEntitySchema,
+    r'FeatureEntity': FeatureEntitySchema,
+    r'FeatureSchedule': FeatureScheduleSchema,
+    r'FeatureAttendance': FeatureAttendanceSchema,
+    r'FeatureQuantity': FeatureQuantitySchema,
+    r'Item': ItemSchema,
+    r'Product': ProductSchema,
+    r'ProductPackaging': ProductPackagingSchema,
+    r'Unit': UnitSchema,
+    r'FeaturePhoto': FeaturePhotoSchema,
+    r'FeatureMultimedia': FeatureMultimediaSchema,
+    r'FeatureOrder': FeatureOrderSchema,
+    r'OrderProduct': OrderProductSchema,
+    r'FeatureScheme': FeatureSchemeSchema,
+    r'Exchange': ExchangeSchema,
+    r'LuckyDrawEntity': LuckyDrawEntitySchema,
+    r'ExchangeCondition': ExchangeConditionSchema,
+    r'ExchangeProceed': ExchangeProceedSchema,
+    r'FeatureCustomer': FeatureCustomerSchema,
+    r'Verification': VerificationSchema,
+    r'Option': OptionSchema,
+    r'FeatureSampling': FeatureSamplingSchema,
+    r'FeatureUrgency': FeatureUrgencySchema,
+    r'FeatureNumericAttribute': FeatureNumericAttributeSchema,
+    r'FeatureOosZone': FeatureOosZoneSchema,
+    r'BoothEntity': BoothEntitySchema,
+    r'AttendanceEntity': AttendanceEntitySchema,
+    r'EmployeeUserEntity': EmployeeUserEntitySchema,
+    r'AttendanceData': AttendanceDataSchema,
+    r'ImageCloud': ImageCloudSchema
+  },
+  getId: _generalEntityGetId,
+  getLinks: _generalEntityGetLinks,
+  attach: _generalEntityAttach,
+  version: '3.1.0+1',
+);
+
+int _generalEntityEstimateSize(
+  GeneralEntity object,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  var bytesCount = offsets.last;
+  {
+    final value = object.attendance;
+    if (value != null) {
+      bytesCount += 3 +
+          AttendanceEntitySchema.estimateSize(
+              value, allOffsets[AttendanceEntity]!, allOffsets);
+    }
+  }
+  bytesCount += 3 +
+      BoothEntitySchema.estimateSize(
+          object.booth, allOffsets[BoothEntity]!, allOffsets);
+  bytesCount += 3 +
+      ConfigEntitySchema.estimateSize(
+          object.config, allOffsets[ConfigEntity]!, allOffsets);
+  bytesCount += 3 + object.identifer.length * 3;
+  bytesCount += 3 +
+      OutletEntitySchema.estimateSize(
+          object.outlet, allOffsets[OutletEntity]!, allOffsets);
+  bytesCount += 3 +
+      ProjectEntitySchema.estimateSize(
+          object.project, allOffsets[ProjectEntity]!, allOffsets);
+  return bytesCount;
+}
+
+void _generalEntitySerialize(
+  GeneralEntity object,
+  IsarWriter writer,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  writer.writeObject<AttendanceEntity>(
+    offsets[0],
+    allOffsets,
+    AttendanceEntitySchema.serialize,
+    object.attendance,
+  );
+  writer.writeObject<BoothEntity>(
+    offsets[1],
+    allOffsets,
+    BoothEntitySchema.serialize,
+    object.booth,
+  );
+  writer.writeObject<ConfigEntity>(
+    offsets[2],
+    allOffsets,
+    ConfigEntitySchema.serialize,
+    object.config,
+  );
+  writer.writeDateTime(offsets[3], object.createdDate);
+  writer.writeString(offsets[4], object.identifer);
+  writer.writeObject<OutletEntity>(
+    offsets[5],
+    allOffsets,
+    OutletEntitySchema.serialize,
+    object.outlet,
+  );
+  writer.writeObject<ProjectEntity>(
+    offsets[6],
+    allOffsets,
+    ProjectEntitySchema.serialize,
+    object.project,
+  );
+}
+
+GeneralEntity _generalEntityDeserialize(
+  Id id,
+  IsarReader reader,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  final object = GeneralEntity(
+    attendance: reader.readObjectOrNull<AttendanceEntity>(
+      offsets[0],
+      AttendanceEntitySchema.deserialize,
+      allOffsets,
+    ),
+    booth: reader.readObjectOrNull<BoothEntity>(
+          offsets[1],
+          BoothEntitySchema.deserialize,
+          allOffsets,
+        ) ??
+        BoothEntity(),
+    config: reader.readObjectOrNull<ConfigEntity>(
+          offsets[2],
+          ConfigEntitySchema.deserialize,
+          allOffsets,
+        ) ??
+        ConfigEntity(),
+    createdDate: reader.readDateTime(offsets[3]),
+    identifer: reader.readString(offsets[4]),
+    outlet: reader.readObjectOrNull<OutletEntity>(
+          offsets[5],
+          OutletEntitySchema.deserialize,
+          allOffsets,
+        ) ??
+        OutletEntity(),
+    project: reader.readObjectOrNull<ProjectEntity>(
+          offsets[6],
+          ProjectEntitySchema.deserialize,
+          allOffsets,
+        ) ??
+        ProjectEntity(),
+  );
+  object.id = id;
+  return object;
+}
+
+P _generalEntityDeserializeProp<P>(
+  IsarReader reader,
+  int propertyId,
+  int offset,
+  Map<Type, List<int>> allOffsets,
+) {
+  switch (propertyId) {
+    case 0:
+      return (reader.readObjectOrNull<AttendanceEntity>(
+        offset,
+        AttendanceEntitySchema.deserialize,
+        allOffsets,
+      )) as P;
+    case 1:
+      return (reader.readObjectOrNull<BoothEntity>(
+            offset,
+            BoothEntitySchema.deserialize,
+            allOffsets,
+          ) ??
+          BoothEntity()) as P;
+    case 2:
+      return (reader.readObjectOrNull<ConfigEntity>(
+            offset,
+            ConfigEntitySchema.deserialize,
+            allOffsets,
+          ) ??
+          ConfigEntity()) as P;
+    case 3:
+      return (reader.readDateTime(offset)) as P;
+    case 4:
+      return (reader.readString(offset)) as P;
+    case 5:
+      return (reader.readObjectOrNull<OutletEntity>(
+            offset,
+            OutletEntitySchema.deserialize,
+            allOffsets,
+          ) ??
+          OutletEntity()) as P;
+    case 6:
+      return (reader.readObjectOrNull<ProjectEntity>(
+            offset,
+            ProjectEntitySchema.deserialize,
+            allOffsets,
+          ) ??
+          ProjectEntity()) as P;
+    default:
+      throw IsarError('Unknown property with id $propertyId');
+  }
+}
+
+Id _generalEntityGetId(GeneralEntity object) {
+  return object.id ?? Isar.autoIncrement;
+}
+
+List<IsarLinkBase<dynamic>> _generalEntityGetLinks(GeneralEntity object) {
+  return [];
+}
+
+void _generalEntityAttach(
+    IsarCollection<dynamic> col, Id id, GeneralEntity object) {
+  object.id = id;
+}
+
+extension GeneralEntityQueryWhereSort
+    on QueryBuilder<GeneralEntity, GeneralEntity, QWhere> {
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterWhere> anyId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(const IdWhereClause.any());
+    });
+  }
+}
+
+extension GeneralEntityQueryWhere
+    on QueryBuilder<GeneralEntity, GeneralEntity, QWhereClause> {
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterWhereClause> idEqualTo(
+      Id id) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IdWhereClause.between(
+        lower: id,
+        upper: id,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterWhereClause> idNotEqualTo(
+      Id id) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(
+              IdWhereClause.lessThan(upper: id, includeUpper: false),
+            )
+            .addWhereClause(
+              IdWhereClause.greaterThan(lower: id, includeLower: false),
+            );
+      } else {
+        return query
+            .addWhereClause(
+              IdWhereClause.greaterThan(lower: id, includeLower: false),
+            )
+            .addWhereClause(
+              IdWhereClause.lessThan(upper: id, includeUpper: false),
+            );
+      }
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterWhereClause> idGreaterThan(
+      Id id,
+      {bool include = false}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(
+        IdWhereClause.greaterThan(lower: id, includeLower: include),
+      );
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterWhereClause> idLessThan(
+      Id id,
+      {bool include = false}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(
+        IdWhereClause.lessThan(upper: id, includeUpper: include),
+      );
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterWhereClause> idBetween(
+    Id lowerId,
+    Id upperId, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IdWhereClause.between(
+        lower: lowerId,
+        includeLower: includeLower,
+        upper: upperId,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+}
+
+extension GeneralEntityQueryFilter
+    on QueryBuilder<GeneralEntity, GeneralEntity, QFilterCondition> {
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      attendanceIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'attendance',
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      attendanceIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'attendance',
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      createdDateEqualTo(DateTime value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'createdDate',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      createdDateGreaterThan(
+    DateTime value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'createdDate',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      createdDateLessThan(
+    DateTime value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'createdDate',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      createdDateBetween(
+    DateTime lower,
+    DateTime upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'createdDate',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> idIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'id',
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      idIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'id',
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> idEqualTo(
+      Id? value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'id',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      idGreaterThan(
+    Id? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'id',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> idLessThan(
+    Id? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'id',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> idBetween(
+    Id? lower,
+    Id? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'id',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'identifer',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'identifer',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'identifer',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'identifer',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'identifer',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'identifer',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'identifer',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'identifer',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'identifer',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition>
+      identiferIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'identifer',
+        value: '',
+      ));
+    });
+  }
+}
+
+extension GeneralEntityQueryObject
+    on QueryBuilder<GeneralEntity, GeneralEntity, QFilterCondition> {
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> attendance(
+      FilterQuery<AttendanceEntity> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.object(q, r'attendance');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> booth(
+      FilterQuery<BoothEntity> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.object(q, r'booth');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> config(
+      FilterQuery<ConfigEntity> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.object(q, r'config');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> outlet(
+      FilterQuery<OutletEntity> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.object(q, r'outlet');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterFilterCondition> project(
+      FilterQuery<ProjectEntity> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.object(q, r'project');
+    });
+  }
+}
+
+extension GeneralEntityQueryLinks
+    on QueryBuilder<GeneralEntity, GeneralEntity, QFilterCondition> {}
+
+extension GeneralEntityQuerySortBy
+    on QueryBuilder<GeneralEntity, GeneralEntity, QSortBy> {
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy> sortByCreatedDate() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdDate', Sort.asc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy>
+      sortByCreatedDateDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdDate', Sort.desc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy> sortByIdentifer() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'identifer', Sort.asc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy>
+      sortByIdentiferDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'identifer', Sort.desc);
+    });
+  }
+}
+
+extension GeneralEntityQuerySortThenBy
+    on QueryBuilder<GeneralEntity, GeneralEntity, QSortThenBy> {
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy> thenByCreatedDate() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdDate', Sort.asc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy>
+      thenByCreatedDateDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdDate', Sort.desc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy> thenById() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'id', Sort.asc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy> thenByIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'id', Sort.desc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy> thenByIdentifer() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'identifer', Sort.asc);
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QAfterSortBy>
+      thenByIdentiferDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'identifer', Sort.desc);
+    });
+  }
+}
+
+extension GeneralEntityQueryWhereDistinct
+    on QueryBuilder<GeneralEntity, GeneralEntity, QDistinct> {
+  QueryBuilder<GeneralEntity, GeneralEntity, QDistinct>
+      distinctByCreatedDate() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'createdDate');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, GeneralEntity, QDistinct> distinctByIdentifer(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'identifer', caseSensitive: caseSensitive);
+    });
+  }
+}
+
+extension GeneralEntityQueryProperty
+    on QueryBuilder<GeneralEntity, GeneralEntity, QQueryProperty> {
+  QueryBuilder<GeneralEntity, int, QQueryOperations> idProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'id');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, AttendanceEntity?, QQueryOperations>
+      attendanceProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'attendance');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, BoothEntity, QQueryOperations> boothProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'booth');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, ConfigEntity, QQueryOperations> configProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'config');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, DateTime, QQueryOperations>
+      createdDateProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'createdDate');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, String, QQueryOperations> identiferProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'identifer');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, OutletEntity, QQueryOperations> outletProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'outlet');
+    });
+  }
+
+  QueryBuilder<GeneralEntity, ProjectEntity, QQueryOperations>
+      projectProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'project');
+    });
+  }
+}

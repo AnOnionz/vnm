@@ -1,0 +1,165 @@
+name: vnm
+description: A new Flutter project.
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.0+57
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  #router
+  flutter_modular: ^6.3.4
+  # state
+  bloc: ^8.1.1
+  #network
+  dio: ^5.4.2+1
+  #database
+  isar: ^3.1.0
+  isar_flutter_libs: ^3.1.0
+  flutter_secure_storage: ^9.0.0
+  shared_preferences: ^2.2.3
+  #common
+  path_provider: ^2.0.15
+  equatable: ^2.0.5
+  intl: ^0.19.0
+  intl_utils: ^2.8.5
+  image: ^4.1.3
+  flutter_svg: ^2.0.10+1
+  collection: ^1.18.0
+  uuid: ^4.4.0
+  async: ^2.11.0
+  crypto: ^3.0.3
+  # flutter_dotenv: ^5.1.0
+  #service
+  permission_handler: ^10.4.3
+  geolocator: ^10.1.0
+  geocoding: ^3.0.0
+  auth0_flutter: ^1.6.0
+  internet_connection_checker_plus: ^2.2.0
+  flutter_kronos: ^0.1.0+1
+  local_auth: ^2.2.0
+  flutter_screen_lock: ^9.1.0
+  currency_text_input_formatter: ^2.2.1
+  fuzzy: ^0.5.1
+  saver_gallery: ^3.0.6
+  share_plus: ^10.0.0
+  package_info_plus: ^8.0.0
+  google_mlkit_face_detection: ^0.12.0
+  device_info_plus: ^10.1.0
+  string_validator_plus: ^0.0.7
+  flutter_image_compress: ^2.3.0
+  firebase_core: ^3.4.0
+  firebase_remote_config: ^5.1.0
+  pretty_dio_logger: ^1.4.0
+
+  #widget
+  cached_network_image: ^3.3.1
+  image_picker: ^1.1.2
+  table_calendar: ^3.1.0
+  stop_watch_timer: ^3.2.1
+  camerawesome: ^2.0.1
+  flutter_typeahead: ^5.2.0
+  easy_image_viewer: ^1.4.1
+  ai_barcode_scanner: ^5.2.2
+  dotted_border: ^2.1.0
+  pinput: ^5.0.0
+
+  #tool
+  flutter_flavor: ^3.1.1
+  change_app_package_name: ^1.1.0
+  flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
+
+  #flutter pub run change_app_package_name:main com.new.package.name
+
+  google_maps_flutter: ^2.5.3
+  flutter_bloc: ^8.1.3
+
+  #animation
+  animate_do: ^3.3.4
+  random_string: ^2.3.1
+  card_swiper: ^3.0.1
+  simple_progress_indicators: ^0.2.0
+  bloc_concurrency: ^0.2.5
+  rive: ^0.13.1
+  webview_flutter: ^4.10.0
+
+dependency_overrides:
+  intl: ^0.19.0
+  mobile_scanner: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  isar_generator: ^3.1.0+1
+  build_runner: ^2.3.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/rives/
+    - assets/map_styles.json
+    - shorebird.yaml
+
+  fonts:
+    - family: AppIcon
+      fonts:
+        - asset: assets/fonts/AppIcon.ttf
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato Black.ttf
+          weight: 900
+        - asset: assets/fonts/Lato Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Lato Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lato Light.ttf
+          weight: 300
+        - asset: assets/fonts/Lato Thin.ttf
+          weight: 100
+
+#flutter_launcher_icons
+#flutter pub run flutter_launcher_icons
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo FMS.png"
+  min_sdk_android: 21
+
+# flutter_native_splash
+# dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/splash_ios.png
+  image_ios: assets/images/splash_ios.png
+  ios: true
+  web: false
+  color_dark: "#ffffff"
+  image_dark: assets/images/splash_ios.png
+
+  android_12:
+    image: assets/images/splash_ios.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/images/splash_ios.png
+
+# flutter pub run intl_utils:generate
+flutter_intl:
+  enabled: true # Required. Must be set to true to activate the plugin. Default: false
+  class_name: L # Optional. Sets the name for the generated localization class. Default: S
+  arb_dir: lib/l10n
+  main_locale: vi # Optional. Sets the main locale used for generating localization files. Provided value should consist of language code and optional script and country codes separated with underscore (e.g. 'en', 'en_GB', 'zh_Hans', 'zh_Hans_CN'). Default: en
+  output_dir: lib/generated # Optional. Sets the directory of generated localization files. Provided value should be a valid path on your system. Default: lib/generated
+

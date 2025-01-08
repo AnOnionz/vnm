@@ -1,0 +1,37 @@
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:vnm/features/attendance/data/datasources/attendance_remote_datasource.dart';
+import 'package:vnm/features/attendance/domain/usecases/get_attendance_usecase.dart';
+import 'package:vnm/features/authentication/authentication_module.dart';
+import 'package:vnm/features/general/data/datasource/general_remote_datasource.dart';
+import 'package:vnm/features/general/data/repository/general_repository_impl.dart';
+import 'package:vnm/features/general/domain/usecase/clear_general_usercase.dart';
+import 'package:vnm/features/general/domain/usecase/create_general_usecase.dart';
+import 'package:vnm/features/general/domain/usecase/get_general_usecase.dart';
+import 'package:vnm/features/general/domain/usecase/refresh_general_usecase.dart';
+import 'package:vnm/features/general/presentation/bloc/general_bloc.dart';
+import 'package:vnm/features/profile/profile_module.dart';
+
+import '../../routes/core_module.dart';
+import 'data/datasource/general_local_datasource.dart';
+import 'domain/usecase/get_config_usecase.dart';
+
+class GeneralModule extends Module {
+  @override
+  List<Module> get imports =>
+      [CoreModule(), AuthenticationModule(), ProfileModule()];
+
+  @override
+  void binds(Injector i) {
+    i.addLazySingleton(GeneralLocalDataSource.new);
+    i.addLazySingleton(GeneralRemoteDatasorce.new);
+    i.add(AttendanceRemoteDataSource.new);
+    i.addLazySingleton(GeneralRepository.new);
+    i.addLazySingleton(CreateGeneralUseCase.new);
+    i.addLazySingleton(RefreshGeneralUseCase.new);
+    i.addLazySingleton(GetAttendanceInfoUsecase.new);
+    i.addLazySingleton(GetConfigUsecase.new);
+    i.addLazySingleton(GetGeneralUseCase.new);
+    i.addLazySingleton(ClearGeneralUseCase.new);
+    i.addLazySingleton(GeneralBloc.new);
+  }
+}

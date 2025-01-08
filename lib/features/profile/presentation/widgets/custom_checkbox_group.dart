@@ -1,0 +1,93 @@
+import 'package:flutter/material.dart';
+import 'package:vnm/core/constant/colors.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+
+class CustomCheckboxGroup<T> extends StatefulWidget {
+  final Axis axis;
+  final List<T> group;
+  final T? value;
+  final Function(T value) onSelected;
+  final String Function(T option) label;
+
+  const CustomCheckboxGroup(
+      {super.key,
+      required this.group,
+      required this.onSelected,
+      this.value,
+      this.axis = Axis.horizontal,
+      required this.label});
+
+  @override
+  State<CustomCheckboxGroup<T>> createState() => _CustomCheckboxGroupState<T>();
+}
+
+class _CustomCheckboxGroupState<T> extends State<CustomCheckboxGroup<T>> {
+  late final _groupValue = widget.group;
+
+  late T? _selectedOption = widget.value;
+
+  void _onSelected(T? option) {
+    setState(() {
+      _selectedOption = option;
+    });
+    widget.onSelected(_selectedOption!);
+  }
+
+  @override
+  void didUpdateWidget(covariant CustomCheckboxGroup<T> oldWidget) {
+    setState(() {
+      _selectedOption = widget.value;
+    });
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final options = [
+      for (final T option in _groupValue)
+        Padding(
+          padding: EdgeInsets.only(right: 16.w),
+          child: InkWell(
+            onTap: () => _onSelected(option),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Radio(
+                  value: option,
+                  groupValue: _selectedOption,
+                  onChanged: _onSelected,
+                  fillColor: WidgetStatePropertyAll(_selectedOption == option
+                      ? AppColors.primary
+                      : 'D9D9D9'.toColor()),
+                  visualDensity: const VisualDensity(
+                      horizontal: VisualDensity.minimumDensity,
+                      vertical: VisualDensity.minimumDensity),
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                SizedBox(width: 8.w),
+                Text(
+                  widget.label(option),
+                  style: context.textTheme.body1
+                      ?.copyWith(color: AppColors.black.withOpacity(0.85)),
+                )
+              ],
+            ),
+          ),
+        )
+    ];
+    if (widget.axis == Axis.horizontal) {
+      return Wrap(
+        children: options,
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (final Widget opt in options)
+          Padding(padding: EdgeInsets.only(bottom: 12.h), child: opt)
+      ],
+    );
+  }
+}

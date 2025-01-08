@@ -1,0 +1,37 @@
+import 'package:bloc/bloc.dart';
+import 'package:vnm/core/errors/failure.dart';
+import 'package:vnm/core/widgets/popup.dart';
+import 'package:vnm/features/crawl/domain/entities/crawl_quantity_entity.dart';
+import 'package:vnm/features/crawl/domain/usecases/crawl_data_usecase.dart';
+import 'package:vnm/features/crawl/domain/usecases/get_quantities_usecase.dart';
+import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:vnm/features/general/domain/entities/general_entity.dart';
+
+part 'crawl_state.dart';
+
+class CrawlCubit extends Cubit<CrawlState> {
+  final CrawlDataUsecase crawlData;
+  final GetQuantitiesUsecase getQuantities;
+  CrawlCubit(this.getQuantities, this.crawlData) : super(CrawlLoading());
+
+  Future<void> saveData(
+      {required CrawlQuantityEntity entity,
+      required FeatureEntity feature}) async {
+    final execute =
+        await crawlData(QuantitiesParams(quantities: entity, feature: feature));
+    execute.fold((failure) {
+      showSuccess(title: 'Lưu thành công');
+    }, (data) async {
+      emit(CrawlSuccess(data));
+      showSuccess(title: 'Lưu thành công');
+    });
+  }
+
+  Future<void> fetchData(
+      {required GeneralEntity general, required FeatureEntity feature}) async {
+    emit(CrawlLoading());
+    final execute = await getQuantities(feature);
+    execute.fold((failure) async => emit(CrawlFailure(failure)),
+        (data) async => emit(CrawlSuccess(data)));
+  }
+}

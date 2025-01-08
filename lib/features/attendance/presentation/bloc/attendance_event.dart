@@ -1,0 +1,12 @@
+part of 'attendance_bloc.dart';
+
+class AttendanceEvent extends Equatable {
+  final XFile? file;
+  final Position? position;
+  final FeatureEntity feature;
+
+  const AttendanceEvent({this.file, this.position, required this.feature});
+
+  @override
+  List<Object?> get props => [file, position, feature];
+}

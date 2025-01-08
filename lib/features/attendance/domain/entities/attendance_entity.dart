@@ -1,0 +1,167 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
+import 'package:vnm/features/statistic/domain/entities/employee_entity.dart';
+import 'package:isar/isar.dart';
+
+import '../../../../core/constant/enum.dart';
+
+part 'attendance_entity.g.dart';
+
+@embedded
+class AttendanceEntity {
+  final int? id;
+  final EmployeeUserEntity? user;
+  final AttendanceData? dataIn;
+  final AttendanceData? dataOut;
+
+  AttendanceEntity({
+    this.id,
+    this.user,
+    this.dataIn,
+    this.dataOut,
+  });
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'user': user?.toMap(),
+      'in': dataIn?.toMap(),
+      'out': dataOut?.toMap(),
+    };
+  }
+
+  factory AttendanceEntity.fromMap(Map<String, dynamic> map) {
+    return AttendanceEntity(
+      id: map['id'] as int,
+      user: map['user'] != null
+          ? EmployeeUserEntity.fromMap(map['user'] as Map<String, dynamic>)
+          : null,
+      dataIn: map['in'] != null
+          ? AttendanceData.fromMap(map['in'] as Map<String, dynamic>)
+          : null,
+      dataOut: map['out'] != null
+          ? AttendanceData.fromMap(map['out'] as Map<String, dynamic>)
+          : null,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory AttendanceEntity.fromJson(String source) =>
+      AttendanceEntity.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() =>
+      'AttendanceEntity(id: $id, user: $user, in: $dataIn, out: $dataOut)';
+
+  AttendanceEntity copyWith({
+    int? id,
+    EmployeeUserEntity? user,
+    AttendanceData? dataIn,
+    AttendanceData? dataOut,
+  }) {
+    return AttendanceEntity(
+      id: id ?? this.id,
+      user: user,
+      dataIn: dataIn ?? this.dataIn,
+      dataOut: dataOut ?? this.dataOut,
+    );
+  }
+}
+
+@embedded
+class AttendanceData {
+  final ImageCloud? image;
+  final double? latitude;
+  final double? longitude;
+  final String? deviceId;
+  final DateTime? deviceTime;
+
+  AttendanceData({
+    this.image,
+    this.latitude,
+    this.longitude,
+    this.deviceId,
+    this.deviceTime,
+  });
+
+  @override
+  String toString() {
+    return 'AttendanceData(image: $image, latitude: $latitude, longitude: $longitude, deviceId: $deviceId, deviceTime: $deviceTime)';
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'image': image?.toMap(),
+      'latitude': latitude,
+      'longitude': longitude,
+      'deviceId': deviceId,
+      'deviceTime': deviceTime,
+    };
+  }
+
+  factory AttendanceData.fromMap(Map<String, dynamic> map) {
+    return AttendanceData(
+      image: map['image'] != null
+          ? ImageCloud.fromMap(map['image'] as Map<String, dynamic>)
+          : null,
+      latitude: map['latitude'] != null
+          ? double.tryParse(map['latitude'].toString())
+          : null,
+      longitude: map['longitude'] != null
+          ? double.tryParse(map['longitude'].toString())
+          : null,
+      deviceId: map['deviceId'] != null ? map['deviceId'] as String : null,
+      deviceTime: DateTime.parse(map['deviceTime'] as String).toLocal(),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory AttendanceData.fromJson(String source) =>
+      AttendanceData.fromMap(json.decode(source) as Map<String, dynamic>);
+}
+
+@embedded
+class ImageCloud {
+  final int? id;
+  final String? filename;
+  final List<String>? variants;
+
+  ImageCloud({
+    this.id,
+    this.filename,
+    this.variants,
+  });
+
+  String getImage({ImageType image = ImageType.public}) {
+    return variants!.firstWhere((element) => element.endsWith(image.name));
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'filename': filename,
+      'variants': variants,
+    };
+  }
+
+  factory ImageCloud.fromMap(Map<String, dynamic> map) {
+    return ImageCloud(
+      id: map['id'] as int,
+      filename: map['filename'] as String?,
+      variants:
+          (map['variants'] as List<dynamic>).map((e) => e.toString()).toList(),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory ImageCloud.fromJson(String source) =>
+      ImageCloud.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() =>
+      'ImageCloud(id: $id, filename: $filename, variants: $variants)';
+}

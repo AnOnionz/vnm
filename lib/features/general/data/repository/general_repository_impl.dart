@@ -1,0 +1,119 @@
+import 'package:collection/collection.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:vnm/core/constant/enum.dart';
+import 'package:vnm/core/constant/type_def.dart';
+import 'package:vnm/core/data_source/local_data_source.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/repository/repository.dart';
+import 'package:vnm/core/services/network_time/network_time_service.dart';
+import 'package:vnm/core/usecase/either.dart';
+import 'package:vnm/features/attendance/data/datasources/attendance_remote_datasource.dart';
+import 'package:vnm/features/attendance/domain/entities/attendance_entity.dart';
+import 'package:vnm/features/authentication/data/datasources/auth_local_data_source.dart';
+import 'package:vnm/features/crawl/domain/entities/crawl_quantity_entity.dart';
+import 'package:vnm/features/general/data/datasource/general_local_datasource.dart';
+import 'package:vnm/features/general/data/datasource/general_remote_datasource.dart';
+import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:vnm/features/general/domain/entities/general_entity.dart';
+import 'package:vnm/features/general/domain/repository/general_repository.dart';
+import 'package:vnm/features/generic_data/domain/entities/numeric_sheet_entity.dart';
+import 'package:vnm/features/note/domain/entities/note_entity.dart';
+import 'package:vnm/features/oos/domain/entities/oos_entity.dart';
+import 'package:vnm/features/order/domain/entities/order_entity.dart';
+import 'package:vnm/features/report/domain/entities/photo_entity.dart';
+import 'package:vnm/features/sampling/domain/entities/sampling_entity.dart';
+import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
+
+class GeneralRepository extends Repository
+    with LocalDatasource
+    implements IGeneralRepository {
+  GeneralEntity? general;
+  final AttendanceRemoteDataSource _attendanceRemote;
+  final GeneralRemoteDatasorce _remote;
+  final GeneralLocalDataSource _local;
+  final AuthenticationLocalDataSource _localAuth;
+
+  GeneralRepository(
+      this._remote, this._attendanceRemote, this._local, this._localAuth);
+
+  @override
+  Future<Result<GeneralEntity?>> getLocalGeneral() async {
+    final localGeneral = _local.getGeneral();
+    if (localGeneral == null) {
+      return Right(null);
+    }
+    final _general = await clearLastData(localGeneral);
+    if (_general == null) {
+      return Right(null);
+    }
+    general = _general;
+
+    return Right(_general);
+  }
+
+  @override
+  Future<Result<ConfigEntity?>> getRemoteConfig(WorkPlaceEntity model) {
+    return todo(() async {
+      final config = await _remote.getConfigs(model);
+      return Right(config);
+    });
+  }
+
+  @override
+  Future<Result<void>> createGeneral(GeneralEntity entity) async {
+    final identifer = _localAuth.getIdentifier();
+    general = entity.copyWith(identifer: identifer);
+
+    _local.cacheGeneral(general!);
+    await clearLastData(general!);
+    return Right(Never);
+  }
+
+  @override
+  Future<Result<GeneralEntity>> refreshGenaral(
+      {AttendanceEntity? attendance}) async {
+    return todo(() async {
+      general = general!.copyWith(attendance: attendance);
+      _local.cacheGeneral(general!);
+      return Right(general!);
+    });
+  }
+
+  @override
+  Future<Result<AttendanceEntity?>> getAttedanceInfo() async {
+    return todo(() async {
+      final attendanceFeature = general!.config.features?.firstWhereOrNull(
+          (feature) => feature.type == FeatureType.attendanceClockingIn);
+      if (attendanceFeature != null) {
+        final attendance = await _attendanceRemote.getAttendanceInfo(
+            feature: attendanceFeature, general: general!);
+
+        return Right(attendance);
+      }
+      return Right(null);
+    });
+  }
+
+  @override
+  Future<Result<void>> clearGeneral() async {
+    general = null;
+    _local.clearGeneral();
+    return Right(Never);
+  }
+
+  Future<GeneralEntity?> clearLastData(GeneralEntity generalEntity) async {
+    final time = await Modular.get<NetworkTimeService>().ntpDateTime();
+    final dateNow = time.dMy();
+    if (dateNow.isAfter(generalEntity.createdDate)) {
+      db.clearCollection<PhotoEntity>();
+      db.clearCollection<NoteEntity>();
+      db.clearCollection<CrawlQuantityEntity>();
+      db.clearCollection<SamplingEntity>();
+      db.clearCollection<OrderEntity>();
+      db.clearCollection<NumericSheetEntity>();
+      db.clearCollection<OOSEntity>();
+      return null;
+    }
+    return generalEntity;
+  }
+}

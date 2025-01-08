@@ -1,0 +1,155 @@
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+
+import 'package:vnm/core/services/media/media_service.dart';
+import 'package:vnm/core/widgets/app_indicator.dart';
+import 'package:vnm/core/widgets/notifications.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:uuid/uuid.dart';
+
+import '../../../../core/constant/colors.dart';
+import '../../../../core/constant/icons.dart';
+import '../../../../core/database/database.dart';
+import '../../../../core/firebase/firebase_remote_config_service.dart';
+import '../../../../core/services/network_time/network_time_service.dart';
+import '../../../../core/widgets/popup.dart';
+import '../../../setting/domain/entities/setting_app.dart';
+import '../../domain/entities/image_dynamic.dart';
+
+class ImagePickerWidget extends StatefulWidget {
+  final bool enable;
+  final double? height;
+  final bool isWatermarkRequired;
+  final bool multiSource;
+  final void Function(ImageDynamic image) onChanged;
+  final Color? backgroundColor;
+  final ValueNotifier<bool>? isWatermarking;
+  final bool isFaceDetector;
+
+  ImagePickerWidget({
+    super.key,
+    this.height,
+    required this.enable,
+    this.isWatermarkRequired = true,
+    this.isWatermarking,
+    required this.onChanged,
+    this.multiSource = false,
+    this.backgroundColor,
+    this.isFaceDetector = false,
+  });
+
+  final _ImagePickerWidgetState state = _ImagePickerWidgetState();
+
+  @override
+  State<ImagePickerWidget> createState() => state;
+}
+
+class _ImagePickerWidgetState extends State<ImagePickerWidget> {
+  final MediaService _service = MediaService();
+  final NetworkTimeService _timeService = Modular.get();
+  final _remoteConfig = FirebaseRemoteConfigService();
+  final settings = Database.instance.getObject<SettingApp>();
+  late ValueNotifier<bool> isWatermarking = ValueNotifier(false);
+
+  Future<void> takeImage() async {
+    if (widget.multiSource) {
+      showTakeImageMultipleSource(
+          onSource1: () => _take(ImageSource.camera),
+          onSource2: () => _take(ImageSource.gallery));
+    } else {
+      await _take(ImageSource.camera);
+    }
+  }
+
+  Future<void> _take(ImageSource source) async {
+    if (isWatermarking.value == false) {
+      final file = await _service.pickImage(source: source);
+      if (file != null) {
+        final time = await _timeService.ntpDateTime();
+        if (widget.isFaceDetector) {
+          final hasFace = await _service.faceDetector(file);
+          if (!hasFace) {
+            showFaceNotFound(onPressed: takeImage);
+            return;
+          }
+          ;
+        }
+        if (widget.isWatermarkRequired) {
+          isWatermarking.value = true;
+          widget.isWatermarking?.value = true;
+
+          try {
+            final fileWithWatermark = await _service.addWatermark(file);
+            if (fileWithWatermark != null) {
+              if (_remoteConfig.saveToGallery == true &&
+                  settings?.saveGallery == true) {
+                _service.saveGallery(fileWithWatermark);
+              }
+              final image = ImageDynamic(
+                uuid: Uuid().v1(),
+                path: fileWithWatermark.path,
+                dataTimestamp: time,
+              );
+              widget.onChanged(image);
+            } else {
+              showFailure(
+                title: 'Không định vị được vị trí của bạn',
+                icon: SvgPicture.asset(AppIcons.requiredAttendance),
+                message: 'Vui lòng kiểm tra GPS / kết nối mạng của bạn',
+                btnText: 'Ok',
+              );
+            }
+            isWatermarking.value = false;
+            widget.isWatermarking?.value = false;
+          } catch (e) {
+            isWatermarking.value = false;
+            widget.isWatermarking?.value = false;
+          }
+        } else {
+          if (_remoteConfig.saveToGallery == true &&
+              settings?.saveGallery == true) {
+            _service.saveGallery(file);
+          }
+          final image = ImageDynamic(
+            uuid: Uuid().v1(),
+            path: file.path,
+            dataTimestamp: time,
+          );
+          widget.onChanged(image);
+        }
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final height = ((context.screenWidth - 80.w) - 4 * 12.h) / 5;
+    return GestureDetector(
+      onTap: () => widget.enable ? takeImage() : null,
+      child: Container(
+        height: widget.height ?? height,
+        width: widget.height ?? height,
+        child: Center(
+          child: ListenableBuilder(
+              listenable: isWatermarking,
+              builder: (context, child) {
+                return isWatermarking.value
+                    ? AppIndicator()
+                    : SvgPicture.asset(
+                        AppIcons.camera,
+                        height: (widget.height ?? height) / 2,
+                        width: (widget.height ?? height) / 2,
+                      );
+              }),
+        ),
+        decoration: BoxDecoration(
+            color: widget.backgroundColor ?? AppColors.aliceBlue,
+            borderRadius: BorderRadius.circular(13.33.sqr)),
+      ),
+    );
+  }
+}

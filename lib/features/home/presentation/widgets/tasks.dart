@@ -1,0 +1,75 @@
+import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:vnm/core/constant/enum.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:vnm/features/general/presentation/page/mixin_general.dart';
+import 'package:vnm/features/home/presentation/widgets/task_box.dart';
+
+import '../bloc/necessary_bloc.dart';
+
+class Tasks extends StatefulWidget {
+  const Tasks({super.key});
+
+  @override
+  State<Tasks> createState() => _TasksState();
+}
+
+class _TasksState extends State<Tasks> with GeneralDataMixin {
+  late final tasks = general!.config.features!
+      .where((feature) => feature.type != null && !feature.type!.isAssistance)
+      .toList();
+  final double columns = 3;
+  late final rows = (tasks.length / columns).ceil();
+  final double extendHeight = 136;
+
+  @override
+  void initState() {
+    super.initState();
+    final featureExchange = tasks.firstWhereOrNull(
+        (feature) => feature.type == FeatureType.customerInformationCapturing);
+    if (featureExchange != null) {
+      tasks.add(EmbeddedFeatureEntity(
+          name: 'Lịch sử ' +
+              (featureExchange.name ?? 'Ghi nhận đơn hàng').toLowerCase(),
+          type: FeatureType.historyExchange,
+          ordinal: featureExchange.ordinal,
+          dependentOnFeatureIds: featureExchange.dependentOnFeatureIds,
+          feature: featureExchange));
+    }
+
+    tasks.sort((a, b) => a.ordinal! - b.ordinal!);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: rows * extendHeight + (rows - 1) * 15,
+      child: CustomScrollView(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        slivers: [
+          SliverGrid.builder(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: context.screenWidth / columns,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+                mainAxisExtent: extendHeight),
+            itemCount: tasks.length,
+            itemBuilder: (context, index) {
+              final feature = tasks[index];
+              return TaskBox(
+                height: extendHeight,
+                name: feature.name ?? '',
+                onPressed: () => context
+                    .read<NecessaryBloc>()
+                    .add(NecessaryIn(feature: feature)),
+              );
+            },
+          )
+        ],
+      ),
+    );
+  }
+}

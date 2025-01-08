@@ -1,0 +1,59 @@
+import 'package:dio/dio.dart';
+
+import '/core/constant/keys.dart';
+import '/core/mixins/fx.dart';
+import '../environment/env.dart';
+
+Duration kTimeOutDuration = 30.seconds;
+
+abstract class ApiService {
+  static String apiBaseUrl = env.variables[Keys.BASE_URL] as String;
+
+  void setBearerAuth({required String token});
+
+  void clearBearerAuth();
+
+  void addInterceptor(Interceptor interceptor);
+
+  void setValidateStatus(ValidateStatus validateStatus);
+
+  void setBaseUrl(String url);
+
+  void setFormData();
+
+  void setTimeout(
+    Duration? timeout,
+  );
+
+  /// HTTP request methods
+  ///
+  /// [GET] method
+  Future<T?> get<T>(
+      {required String path,
+      FormData? data,
+      Map<String, dynamic>? queryParameters});
+
+  /// HTTP request methods
+  ///
+  ///[POST] method
+  Future<T?> post<T>(
+      {required String path,
+      FormData? data,
+      Map<String, dynamic>? queryParameters});
+
+  /// HTTP request methods
+  ///
+  ///[PUT] method
+  Future<T?> put<T>(
+      {required String path,
+      FormData? data,
+      Map<String, dynamic>? queryParameters});
+
+  /// HTTP request methods
+  ///
+  ///[DELETE] method
+  Future<T?> delete<T>(
+      {required String path,
+      FormData? data,
+      Map<String, dynamic>? queryParameters});
+}

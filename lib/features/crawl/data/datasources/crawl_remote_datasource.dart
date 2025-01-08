@@ -1,0 +1,60 @@
+import 'package:vnm/features/general/domain/entities/general_entity.dart';
+
+import '../../../../core/data_source/remote_datasource.dart';
+import '../../../../core/utilities/parser.dart';
+import '../../../general/domain/entities/config_entity.dart';
+import '../../domain/entities/crawl_quantity_entity.dart';
+import '../../domain/entities/recently_quantity_entity.dart';
+
+abstract class ICrawlRemoteDatasource {
+  Future<CrawlQuantityEntity?> createQuantities(
+      {required CrawlQuantityEntity quantities,
+      required GeneralEntity general});
+  Future<CrawlQuantityEntity?> getQuantities(
+      {required FeatureEntity feature, required GeneralEntity general});
+  Future<List<RecentlyQuantityEntity>> getQuantitiesRecently(
+      {required FeatureEntity feature, required GeneralEntity general});
+}
+
+class CrawlRemoteDatasource extends RemoteDatasource
+    implements ICrawlRemoteDatasource {
+  @override
+  Future<CrawlQuantityEntity?> createQuantities(
+      {required CrawlQuantityEntity quantities,
+      required GeneralEntity general}) async {
+    final formData = quantities.toMap();
+
+    final _resp = await dio.post(
+        path:
+            '/app/attendances/${general.attendance!.id}/features/${quantities.featureId}/quantities',
+        data: formData);
+    return parseJson<CrawlQuantityEntity>(
+        (json: _resp, fromJson: CrawlQuantityEntity.fromMap));
+  }
+
+  @override
+  Future<CrawlQuantityEntity?> getQuantities(
+      {required FeatureEntity feature, required GeneralEntity general}) async {
+    final _resp = await dio.get(
+        path:
+            '/app/attendances/${general.attendance!.id}/features/${feature.id}/quantities');
+
+    return parseJson<CrawlQuantityEntity>((
+      json: _resp,
+      fromJson: CrawlQuantityEntity.fromMap,
+    ));
+  }
+
+  @override
+  Future<List<RecentlyQuantityEntity>> getQuantitiesRecently(
+      {required FeatureEntity feature, required GeneralEntity general}) async {
+    final _resp = await dio.get(
+        path:
+            '/app/attendances/${general.attendance!.id}/features/${feature.id}/quantities/recently');
+
+    return parseListJson<RecentlyQuantityEntity>((
+      listJson: _resp,
+      fromJson: RecentlyQuantityEntity.fromMap,
+    ));
+  }
+}

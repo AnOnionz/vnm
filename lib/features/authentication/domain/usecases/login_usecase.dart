@@ -1,0 +1,16 @@
+import 'package:auth0_flutter/auth0_flutter.dart';
+import 'package:vnm/core/mixins/extension/func_ext.dart';
+
+import '/core/constant/type_def.dart';
+import '/core/usecase/usecase.dart';
+import '../repositories/authentication_repository.dart';
+
+class LoginUsecase extends UseCase<Credentials?, void> {
+  final AuthenticationRepository repository;
+
+  LoginUsecase({required this.repository});
+  @override
+  Future<Result<Credentials?>> call([void params]) async {
+    return repository.login().withLoading();
+  }
+}

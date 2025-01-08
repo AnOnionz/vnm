@@ -1,0 +1,7 @@
+{ 
+    "@@locale": "vi",
+    "appName": "Field Management System",
+    "loginText":"Đăng nhập", 
+    "loginDescription":"Lorem Ipsum is simply dummy text of the printing and",
+    "loginButtonText": "Đăng nhập"
+}

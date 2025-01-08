@@ -1,0 +1,39 @@
+import 'package:bloc/bloc.dart';
+import 'package:vnm/core/errors/failure.dart';
+import 'package:vnm/core/widgets/popup.dart';
+import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:vnm/features/general/domain/entities/general_entity.dart';
+import 'package:vnm/features/report/domain/usecases/create_photos_usecase.dart';
+import 'package:vnm/features/report/domain/usecases/get_photos_usecase.dart';
+
+import '../../domain/entities/photo_entity.dart';
+
+part 'report_state.dart';
+
+class ReportCubit extends Cubit<ReportState> {
+  final CreatePhotosUsecase createPhotos;
+  final GetPhotosUsecase getPhotos;
+
+  ReportCubit(this.createPhotos, this.getPhotos) : super(ReportLoading());
+
+  Future<void> savePhotos(
+      {required List<PhotoEntity> items,
+      required FeatureEntity feature}) async {
+    final execute =
+        await createPhotos(CreatePhotosParams(photos: items, feature: feature));
+    execute.fold((failure) {
+      showSuccess(title: 'Lưu thành công');
+    }, (data) async {
+      emit(ReportSuccess(data));
+      showSuccess(title: 'Lưu thành công');
+    });
+  }
+
+  Future<void> fetchPhotos(
+      {required GeneralEntity general, required FeatureEntity feature}) async {
+    emit(ReportLoading());
+    final execute = await getPhotos(feature);
+    execute.fold((failure) async => emit(ReportFailure(failure)),
+        (data) async => emit(ReportSuccess(data)));
+  }
+}

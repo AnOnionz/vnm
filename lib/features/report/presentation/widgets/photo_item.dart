@@ -1,0 +1,111 @@
+import 'package:flutter/material.dart';
+import 'package:vnm/core/constant/colors.dart';
+import 'package:vnm/core/constant/enum.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:vnm/features/report/domain/entities/photo_entity.dart';
+
+import '../../../../core/widgets/share_button.dart';
+import '../../../images/presentation/widgets/image_view.dart';
+
+class PhotoItem extends StatelessWidget {
+  final FeaturePhoto entity;
+  final FeatureEntity feature;
+  final List<PhotoEntity> photos;
+  final bool isWatermark;
+  final bool enableShare;
+  final ValueNotifier<bool>? isWatermarking;
+  final void Function(ImageDynamic image) onAdded;
+  final void Function(ImageDynamic image) onDeleted;
+  const PhotoItem(
+      {super.key,
+      required this.entity,
+      required this.photos,
+      required this.isWatermark,
+      this.isWatermarking,
+      this.enableShare = false,
+      required this.onAdded,
+      required this.feature,
+      required this.onDeleted});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
+      decoration: BoxDecoration(
+          color: AppColors.white, borderRadius: BorderRadius.circular(16.sqr)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          RichText(
+            text: TextSpan(
+                text: '${entity.name} ',
+                style: context.textTheme.subtitle1
+                    ?.copyWith(color: AppColors.black),
+                children: [
+                  TextSpan(
+                    text: _optinal(entity.minimum, entity.maximum),
+                    style: context.textTheme.subtitle1
+                        ?.copyWith(color: AppColors.primary),
+                  ),
+                  if (entity.isRequired)
+                    TextSpan(
+                      text: ' *',
+                      style: context.textTheme.subtitle1
+                          ?.copyWith(color: AppColors.primary),
+                    ),
+                ]),
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 20.h),
+              child: ListViewImages(
+                imagePickerButton: ImagePickerWidget(
+                  enable: photos
+                          .where((element) =>
+                              element.status != SyncStatus.isDeleted)
+                          .length <
+                      entity.maximum!,
+                  onChanged: onAdded,
+                  isWatermarkRequired: isWatermark,
+                  isWatermarking: isWatermarking,
+                ),
+                images: photos
+                    .where((element) => element.status != SyncStatus.isDeleted)
+                    .map((e) => ImageDynamic(
+                        id: e.id,
+                        uuid: e.dataUuid,
+                        dataTimestamp: e.dataTimestamp,
+                        path: e.path,
+                        networkImage: e.image))
+                    .toList(),
+                onDeleted: onDeleted,
+              )),
+          Align(
+              alignment: Alignment.centerRight,
+              child: ShareButton(
+                enable: enableShare &&
+                    photos.any((photo) => photo.status == SyncStatus.synced),
+                photos: photos,
+              )),
+          if (entity.description != null)
+            Padding(
+              padding: EdgeInsets.only(top: 20.h),
+              child: Text(
+                entity.description!,
+                style: context.textTheme.caption2,
+              ),
+            )
+        ],
+      ),
+    );
+  }
+
+  String _optinal(int? min, int? max) {
+    return switch (min == max) {
+      true => '(bắt buộc chụp ${max} hình)',
+      false => '(chụp từ ${min}-${max} hình)',
+    };
+  }
+}

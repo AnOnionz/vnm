@@ -1,0 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+part of 'sync_bloc.dart';
+
+abstract class SyncEvent {
+  const SyncEvent();
+}
+
+class SyncAddListener extends SyncEvent {}
+
+class SyncStarted extends SyncEvent {}
+
+class SyncUpdated extends SyncEvent {
+  final FeatureEntity feature;
+  final List<BaseEntity> data;
+
+  SyncUpdated({required this.feature, required this.data});
+
+  @override
+  String toString() {
+    return 'SyncUpdated(feature: ${feature.name} , data: $data )';
+  }
+}

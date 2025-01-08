@@ -1,0 +1,84 @@
+import 'dart:math';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:vnm/core/constant/colors.dart';
+import 'package:vnm/core/constant/enum.dart';
+import 'package:vnm/core/constant/icons.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+
+class SettingItem extends StatelessWidget {
+  final Widget? icon;
+  final String? name;
+  final SettingType type;
+  final VoidCallback onTap;
+  final bool switchValue;
+  const SettingItem(
+      {super.key,
+      this.icon,
+      this.name,
+      required this.type,
+      required this.onTap,
+      this.switchValue = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 4.h, horizontal: 16.w),
+      decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(16.sqr),
+          boxShadow: [
+            BoxShadow(
+                color: '#3151CF'.toColor(0.25),
+                offset: Offset(0, 0),
+                blurRadius: 1)
+          ]),
+      child: ListTile(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.sqr),
+        ),
+        leading: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(right: icon != null ? 12.w : 0),
+              child: icon ?? SizedBox(),
+            ),
+            name != null
+                ? Text(
+                    name!,
+                    softWrap: true,
+                    overflow: TextOverflow.clip,
+                    style: context.textTheme.subtitle1
+                        ?.copyWith(color: AppColors.nero),
+                  )
+                : SizedBox()
+          ],
+        ),
+        trailing: switch (type) {
+          SettingType.toggle => StatefulBuilder(builder: (context, setState) {
+              return CupertinoSwitch(
+                value: switchValue,
+                activeColor: AppColors.primary,
+                onChanged: (bool? value) {
+                  onTap();
+                },
+              );
+            }),
+          SettingType.transfer => Transform.rotate(
+              angle: pi,
+              child: SvgPicture.asset(
+                AppIcons.back,
+                height: 24.h,
+                colorFilter: ColorFilter.mode(AppColors.nobel, BlendMode.srcIn),
+              )),
+          _ => SizedBox()
+        },
+        onTap: onTap,
+        contentPadding: EdgeInsets.symmetric(vertical: 22.h, horizontal: 16.w),
+      ),
+    );
+  }
+}

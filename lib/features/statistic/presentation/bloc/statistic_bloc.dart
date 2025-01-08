@@ -1,0 +1,65 @@
+import 'dart:async';
+
+import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
+import 'package:equatable/equatable.dart';
+import 'package:vnm/features/statistic/domain/entities/statistic_entity.dart';
+import 'package:vnm/features/statistic/domain/usecases/fetch_employee_statistic_usecase.dart';
+
+import '../../../../core/errors/failure.dart';
+import '../../../../core/usecase/either.dart';
+import '../../domain/usecases/fetch_individual_statistic_offline_usecase.dart';
+import '../../domain/usecases/fetch_individual_statistic_usecase.dart';
+import '../../domain/usecases/fetch_team_statistic_usecase.dart';
+
+part 'statistic_event.dart';
+part 'statistic_state.dart';
+
+class StatisticBloc extends Bloc<StatisticEvent, StatisticState> {
+  final FetchTeamStatisticUseCase fetchTeamStatistic;
+  final FetchIndividualStatisticUseCase fetchIndividualStatistic;
+  final FetchEmployeeStatisticUseCase fetchEmployeeStatistic;
+  final FetchIndividualStatisticOfflineUseCase fetchIndividualStatisticOffline;
+  StatisticBloc(this.fetchTeamStatistic, this.fetchIndividualStatistic,
+      this.fetchEmployeeStatistic, this.fetchIndividualStatisticOffline)
+      : super(StatisticInitial()) {
+    on<FetchIndividualStatistic>(_onFetchIndividualStatistic,
+        transformer: droppable());
+    on<FetchTeamStatistic>(_onFetchTeamStatistic, transformer: droppable());
+    on<FetchEmployeeStatistic>(_onFetchEmployeeStatistic,
+        transformer: droppable());
+  }
+
+  FutureOr<void> _onFetchIndividualStatistic(
+      FetchIndividualStatistic event, Emitter<StatisticState> emit) async {
+    emit(StatisticLoading());
+    Either<Failure, StatisticEntity> execute;
+    if (event.isOnline) {
+      execute = await fetchIndividualStatistic(event.featureId);
+    } else {
+      execute = await fetchIndividualStatisticOffline(event.featureId);
+    }
+
+    execute.fold((failure) => emit(StatisticFailure(failure)),
+        (data) => emit(StatisticSuccess(data)));
+  }
+
+  FutureOr<void> _onFetchTeamStatistic(
+      FetchTeamStatistic event, Emitter<StatisticState> emit) async {
+    emit(StatisticLoading());
+    final execute = await fetchTeamStatistic(event.featureId);
+
+    execute.fold((failure) => emit(StatisticFailure(failure)),
+        (data) => emit(StatisticSuccess(data)));
+  }
+
+  FutureOr<void> _onFetchEmployeeStatistic(
+      FetchEmployeeStatistic event, Emitter<StatisticState> emit) async {
+    emit(StatisticLoading());
+    final execute = await fetchEmployeeStatistic(EmployeeStatisticParams(
+        featureId: event.featureId, employeeId: event.employeeId));
+
+    execute.fold((failure) => emit(StatisticFailure(failure)),
+        (data) => emit(StatisticSuccess(data)));
+  }
+}

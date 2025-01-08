@@ -1,0 +1,169 @@
+import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:vnm/core/constant/icons.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+import 'package:vnm/features/order/presentation/widgets/customer/customer_field.dart';
+import 'package:vnm/features/order/presentation/widgets/data_feature_widget.dart';
+
+import '../../../../../core/errors/failure.dart';
+import '../../../../../core/widgets/popup.dart';
+import '../../../../general/domain/entities/config_entity.dart';
+import '../../../domain/entities/order_entity.dart';
+import '../../cubit/identify_with_limits_cubit.dart';
+
+class IdentityCustomerForm extends StatefulWidget {
+  final Map<FeatureCustomer, CustomerInfo> fields;
+  final IdentifyWithLimitsCubit identifyCubit;
+  final Function(Map<FeatureCustomer, CustomerInfo> fields) onFieldChanged;
+  final Function(Map<FeatureCustomer, CustomerInfo> fields) onIdentify;
+  const IdentityCustomerForm({
+    Key? key,
+    required this.identifyCubit,
+    required this.fields,
+    required this.onFieldChanged,
+    required this.onIdentify,
+  }) : super(key: key);
+
+  @override
+  State<IdentityCustomerForm> createState() => _IdentityCustomerFormState();
+}
+
+class _IdentityCustomerFormState extends State<IdentityCustomerForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  late final Map<FeatureCustomer, CustomerInfo> _fields = {};
+
+  late final generalFeature = DataFeature.of(context).data;
+
+  late final order = DataFeature.of(context).order;
+
+  bool validate() {
+    return !_fields.entries.any((field) {
+      if (field.key.isRequired!) {
+        return field.value.value.isEmptyOrNull && field.value.options == null;
+      }
+      return false;
+    });
+  }
+
+  @override
+  void initState() {
+    widget.identifyCubit.stream.listen((state) {
+      if (state is IdentifyWithLimitsFailure) {
+        if (state.failure is SocketFailure) {
+          showFailure(
+              title: 'Không có kết nối mạng',
+              icon: SvgPicture.asset(AppIcons.requiredInternet),
+              message:
+                  'Kết nối mạng không ổn định, vui lòng kiểm tra lại kết nối mạng',
+              btnText: 'Thử lại',
+              onPressed: () {
+                _identify();
+              });
+        } else {
+          showFailure(
+              title: 'Kiểm tra thông tin thất bại',
+              icon: SvgPicture.asset(AppIcons.failure),
+              message: 'Phát sinh lỗi trong quá trình kiểm tra',
+              btnText: 'Thử lại',
+              onPressed: () {
+                _identify();
+              });
+        }
+      }
+    });
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    _fields.clear();
+    widget.fields.forEach((key, value) {
+      _fields[key] = value.copyWith();
+    });
+    setState(() {});
+    super.didChangeDependencies();
+  }
+
+  Future<void> _identify() async {
+    widget.identifyCubit.identify(
+        identifyFields: _fields.entries.map((e) => e.value).toList(),
+        excludeOrderId: order.id,
+        attendanceId: generalFeature.general.attendance!.id!,
+        featureId: generalFeature.feature.id!);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+        key: _formKey,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ..._fields.entries.toList().mapIndexed((index, entry) {
+              final isLast = index == _fields.length - 1;
+              return Padding(
+                padding: EdgeInsets.only(bottom: isLast ? 0 : 18.h),
+                child: CustomerField(
+                  onChanged: (newCustomerInfo) {
+                    widget.onFieldChanged(
+                        _fields.updateT(entry.key, (value) => newCustomerInfo));
+                  },
+                  featureCustomer: entry.key,
+                  isLast: isLast,
+                  customerInfo: entry.value,
+                ),
+              );
+            }).toList(),
+            Builder(builder: (context) {
+              final isValidate = validate();
+              return Padding(
+                padding: EdgeInsets.only(top: 24.h),
+                child: MaterialButton(
+                  elevation: 0,
+                  disabledElevation: 0,
+                  disabledColor: 'F5F6F8'.toColor(),
+                  color: 'F5F6F8'.toColor(),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.sqr)),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 18.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          AppIcons.search1,
+                          colorFilter: isValidate
+                              ? null
+                              : ColorFilter.mode(
+                                  '#CCC6D9'.toColor(), BlendMode.srcIn),
+                        ),
+                        SizedBox(width: 12.w),
+                        Text(
+                          'Kiểm tra thông tin',
+                          style: context.textTheme.button2?.copyWith(
+                              color: isValidate
+                                  ? '#42526E'.toColor()
+                                  : '#CCC6D9'.toColor()),
+                        )
+                      ],
+                    ),
+                  ),
+                  onPressed: isValidate
+                      ? () {
+                          FocusManager.instance.primaryFocus?.unfocus();
+                          if (_formKey.currentState!.validate()) {
+                            widget.onIdentify(_fields);
+                            _identify();
+                          }
+                        }
+                      : null,
+                ),
+              );
+            })
+          ],
+        ));
+  }
+}

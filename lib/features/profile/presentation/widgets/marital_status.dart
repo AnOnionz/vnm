@@ -1,0 +1,55 @@
+import 'package:flutter/cupertino.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+import 'package:vnm/features/profile/presentation/widgets/user_profile_inheriterd.dart';
+import '../../../../core/constant/enum.dart';
+import '../../../order/presentation/widgets/customer/customer_text_form_field.dart';
+import '../../domain/entities/user_profile_entity.dart';
+import 'custom_checkbox_group.dart';
+
+class MaritalStatus extends StatelessWidget {
+  final Function(UserProfileEntity newValue) onChanged;
+  const MaritalStatus({super.key, required this.onChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+        padding: EdgeInsets.only(bottom: 6.h),
+        child: CustomCheckboxGroup<Marital>(
+          axis: Axis.vertical,
+          label: (option) => option.value,
+          value: UserProfileInherited.of(context).entity.maritalStatus,
+          group: [Marital.SINGLE, Marital.MARRIED, Marital.DIVORCED],
+          onSelected: (value) {
+            onChanged(UserProfileInherited.of(context)
+                .entity
+                .copyWith(maritalStatus: value));
+          },
+        ),
+      ),
+      AppTextFormField(
+        label: 'Số con (nếu có)',
+        isRequired: false,
+        validate: (value) {
+          if ((int.tryParse(value ?? '') ?? 0) > 100) {
+            return 'Số lượng tối đa 100';
+          }
+          return null;
+        },
+        onlyNumber: true,
+        textInputType: TextInputType.numberWithOptions(),
+        value: UserProfileInherited.of(context)
+            .entity
+            .numberOfChildren
+            .toStringOrNull(),
+        onChanged: (value) {
+          onChanged(UserProfileInherited.of(context)
+              .entity
+              .copyWith(numberOfChildren: int.tryParse(value) ?? 0));
+        },
+        textInputAction: TextInputAction.next,
+      ),
+    ]);
+  }
+}

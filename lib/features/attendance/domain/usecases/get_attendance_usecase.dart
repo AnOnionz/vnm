@@ -1,0 +1,16 @@
+import 'package:vnm/features/attendance/domain/entities/attendance_entity.dart';
+import 'package:vnm/features/general/data/repository/general_repository_impl.dart';
+
+import '../../../../core/constant/type_def.dart';
+import '../../../../core/usecase/usecase.dart';
+
+class GetAttendanceInfoUsecase extends UseCase<AttendanceEntity?, void> {
+  final GeneralRepository repository;
+
+  GetAttendanceInfoUsecase(this.repository);
+
+  @override
+  Future<Result<AttendanceEntity?>> call([void params]) {
+    return repository.getAttedanceInfo();
+  }
+}

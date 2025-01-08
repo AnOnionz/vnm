@@ -1,0 +1,146 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:vnm/core/mixins/common.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+import 'package:vnm/core/styles/theme.dart';
+import 'package:vnm/core/widgets/app_bar.dart';
+import 'package:vnm/core/widgets/popup.dart';
+import 'package:vnm/features/general/presentation/bloc/general_bloc.dart';
+import 'package:vnm/features/home/home_module.dart';
+import 'package:vnm/features/sync/presentation/bloc/sync_bloc.dart';
+import 'package:vnm/features/work_place/domain/entities/booth_entity.dart';
+import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:vnm/features/work_place/presentation/widgets/booth_item.dart';
+
+import '../../../../core/constant/icons.dart';
+import '../../../../core/widgets/app_indicator.dart';
+import '../../../../core/widgets/data_load_error_widget.dart';
+import '../../../app/presentation/bloc/app_bloc.dart';
+import '../bloc/fetch_work_place_bloc.dart';
+import '../bloc/work_place_bloc.dart';
+
+class BoothSelectionPage extends StatefulWidget {
+  final WorkPlaceEntity entity;
+  BoothSelectionPage({super.key, required this.entity});
+
+  @override
+  State<BoothSelectionPage> createState() => _BoothSelectionPageState();
+}
+
+class _BoothSelectionPageState extends State<BoothSelectionPage> {
+  late final WorkPlaceBloc _workPlaceBloc = Modular.get();
+  late final SyncBloc _syncBloc = Modular.get();
+  late final GeneralBloc _generalBloc = Modular.get();
+  late final AppBloc appBloc = Modular.get();
+
+  late final FetchWorkPlaceBloc _fetchWorkPlaceBloc = Modular.get()
+    ..add(FetchBooths(workPlace: widget.entity));
+
+  late StreamSubscription<WorkPlaceState> _workPlaceSubscription;
+  late StreamSubscription<GeneralState> _generalSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    Fx.log(widget.entity);
+    _workPlaceSubscription = _workPlaceBloc.stream.listen((state) {
+      _generalBloc.add(GeneralFetch(workPlace: _workPlaceBloc.state.entity));
+    });
+
+    _generalSubscription = _generalBloc.stream.listen((state) {
+      if (state is GeneralSuccess) {
+        _syncBloc.add(SyncStarted());
+        _syncBloc.add(SyncAddListener());
+        context.navigate(HomeModule.route);
+        appBloc.add(AppRequiredLocation());
+      }
+      if (state is GeneralFailure) {
+        showFailure(
+          title: 'Tải dữ liệu thất bại',
+          icon: SvgPicture.asset(AppIcons.failure),
+          message: state.failure?.message,
+          btnText: 'Thử lại',
+          onPressed: () async {
+            await Future.delayed(
+              300.milliseconds,
+              () => _generalBloc
+                  .add(GeneralFetch(workPlace: _workPlaceBloc.state.entity)),
+            );
+          },
+        );
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _fetchWorkPlaceBloc.close();
+    _workPlaceSubscription.cancel();
+    _generalSubscription.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: DefaultAppBar(title: 'Chọn Booth'),
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(16.w, 24.h, 16.w, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Danh sách booth',
+                  style: context.textTheme.h3,
+                ),
+                Expanded(
+                    child: BlocBuilder<FetchWorkPlaceBloc, FetchWorkPlaceState>(
+                  bloc: _fetchWorkPlaceBloc,
+                  builder: (context, state) {
+                    if (state is FetchWorkPlaceSuccess<BoothEntity>) {
+                      return CustomScrollView(
+                        physics: kPhysics,
+                        slivers: [
+                          SliverList.builder(
+                            itemCount: state.data.length,
+                            itemBuilder: (context, index) {
+                              final booth = state.data[index];
+                              return Padding(
+                                padding: EdgeInsets.only(top: 16.h),
+                                child: BoothItem(
+                                  onPressed: () {
+                                    _workPlaceBloc.add(ApplyBooth(
+                                        widget.entity.copyWith(booth: booth)));
+                                  },
+                                  booth: booth,
+                                ),
+                              );
+                            },
+                          )
+                        ],
+                      );
+                    }
+                    if (state is FetchWorkPlaceFailure) {
+                      return Center(
+                        child: DataLoadErrorWidget(
+                            backToHome: false,
+                            onPressed: () => _fetchWorkPlaceBloc.add(
+                                FetchBooths(
+                                    workPlace: _workPlaceBloc.state.entity))),
+                      );
+                    }
+                    return Center(child: AppIndicator());
+                  },
+                ))
+              ],
+            ),
+          ),
+        ));
+  }
+}

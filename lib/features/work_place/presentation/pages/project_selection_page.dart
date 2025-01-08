@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:vnm/core/mixins/fx.dart';
+import 'package:vnm/core/responsive/responsive.dart';
+import 'package:vnm/core/styles/theme.dart';
+import 'package:vnm/features/work_place/domain/entities/project_entity.dart';
+import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:vnm/features/work_place/presentation/bloc/work_place_bloc.dart';
+
+import '../../../../core/widgets/app_bar.dart';
+import '../../../../core/widgets/app_indicator.dart';
+import '../../../../core/widgets/data_load_error_widget.dart';
+import '../bloc/fetch_work_place_bloc.dart';
+import '../widgets/project_item.dart';
+
+class ProjectSelectionPage extends StatefulWidget {
+  ProjectSelectionPage({super.key});
+
+  @override
+  State<ProjectSelectionPage> createState() => _ProjectSelectionPageState();
+}
+
+class _ProjectSelectionPageState extends State<ProjectSelectionPage> {
+  final FetchWorkPlaceBloc _fetchProjectBloc = Modular.get()
+    ..add(FetchProjects());
+
+  final WorkPlaceBloc _workPlaceBloc = Modular.get<WorkPlaceBloc>();
+
+  @override
+  void dispose() {
+    _fetchProjectBloc.close();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: DefaultAppBar(title: 'Chọn dự án'),
+        body: SafeArea(
+          child: Padding(
+              padding: EdgeInsets.fromLTRB(16.w, 24.h, 16.w, 0),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Danh sách dự án',
+                      style: context.textTheme.h3,
+                    ),
+                    Expanded(
+                        child: BlocBuilder<FetchWorkPlaceBloc,
+                            FetchWorkPlaceState>(
+                      bloc: _fetchProjectBloc,
+                      builder: (context, state) {
+                        if (state is FetchWorkPlaceSuccess<ProjectEntity>) {
+                          return CustomScrollView(
+                            physics: kPhysics,
+                            slivers: [
+                              SliverList.builder(
+                                itemCount: state.data.length,
+                                itemBuilder: (context, index) {
+                                  final project = state.data[index];
+                                  return Padding(
+                                    padding: EdgeInsets.only(top: 16.h),
+                                    child: ProjectItem(
+                                      onPressed: () {
+                                        _workPlaceBloc.add(ApplyProject(
+                                            WorkPlaceEntity(project: project)));
+                                      },
+                                      project: project,
+                                    ),
+                                  );
+                                },
+                              )
+                            ],
+                          );
+                        }
+                        if (state is FetchWorkPlaceFailure) {
+                          return Center(
+                            child: DataLoadErrorWidget(
+                                backToHome: false,
+                                onPressed: () =>
+                                    _fetchProjectBloc.add(FetchProjects())),
+                          );
+                        }
+                        return Center(child: AppIndicator());
+                      },
+                    ))
+                  ])),
+        ));
+  }
+}

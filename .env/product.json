@@ -1,0 +1,10 @@
+{ 
+    "APP_NAME": "Vinamilk Optimum & Dielac",
+    "APP_LABEL": "Vinamilk",
+    "BASE_URL": "https://api-fms.outcome.asia",
+    "AUTH0_DOMAIN": "fms.jp.auth0.com",
+    "AUTH0_CLIENT_ID":"qh9d2X8TNqKhzzsOq8uS951SzWqT8P75",
+    "AUTH0_CUSTOM_SCHEME":"fms",
+    "AUDIENCE": "https://fms.outcome.asia",
+    "LUCKY": "https://fms.outcome.asia"
+}

@@ -1,0 +1,36 @@
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:vnm/features/authentication/domain/usecases/logout_success_usecase%20copy.dart';
+import 'package:vnm/features/profile/profile_module.dart';
+
+import '../../routes/core_module.dart';
+import 'data/datasources/auth_local_data_source.dart';
+import 'data/datasources/auth_remote_data_source.dart';
+import 'domain/repositories/authentication_repository.dart';
+import 'domain/usecases/change_pass_usecase.dart';
+import 'domain/usecases/get_credentials_usecase.dart';
+import 'domain/usecases/has_valid_credentials_usecase.dart';
+import 'domain/usecases/login_usecase.dart';
+import 'domain/usecases/logout_usecase.dart';
+import 'domain/usecases/renew_credentials_usecase.dart';
+import 'presentation/blocs/authentication_bloc.dart';
+
+class AuthenticationModule extends Module {
+  @override
+  List<Module> get imports => [CoreModule(), ProfileModule()];
+
+  @override
+  void exportedBinds(Injector i) {
+    i.addSingleton<AuthenticationLocalDataSource>(AuthLocalDataSourceImpl.new);
+    i.addSingleton<AuthenticationRemoteDataSource>(
+        AuthRemoteDataSourceImpl.new);
+    i.addSingleton<AuthenticationRepository>(AuthenticationRepositoryImpl.new);
+    i.addLazySingleton<LoginUsecase>(LoginUsecase.new);
+    i.addLazySingleton<LogoutUsecase>(LogoutUsecase.new);
+    i.addLazySingleton<ChangePassUsecase>(ChangePassUsecase.new);
+    i.addLazySingleton(HasValidCredentialsUsecase.new);
+    i.addLazySingleton(GetCredentialsUsecase.new);
+    i.addLazySingleton(LogoutSuccessUsecase.new);
+    i.addLazySingleton(RenewCredentialsUsecase.new);
+    i.addLazySingleton<AuthenticationBloc>(AuthenticationBloc.new);
+  }
+}

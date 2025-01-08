@@ -1,0 +1,15 @@
+import 'package:vnm/core/constant/type_def.dart';
+import 'package:vnm/core/usecase/usecase.dart';
+import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:vnm/features/general/domain/entities/data_entity.dart';
+import 'package:vnm/features/sync/data/repositories/sync_repository_impl.dart';
+
+class SyncUseCase extends UseCase<void, Map<FeatureEntity, List<BaseEntity>>> {
+  final SyncRepositoryImpl _syncRepository;
+
+  SyncUseCase(this._syncRepository);
+  @override
+  Future<Result<void>> call(Map<FeatureEntity, List<BaseEntity>> params) {
+    return _syncRepository.synchronized(data: params);
+  }
+}

@@ -1,0 +1,37 @@
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:vnm/features/attendance/data/datasources/attendance_remote_datasource.dart';
+import 'package:vnm/features/attendance/data/repositories/attendance_repository_impl.dart';
+import 'package:vnm/features/attendance/domain/usecases/attendance_usecase.dart';
+import 'package:vnm/features/attendance/domain/usecases/face_verification.dart';
+import 'package:vnm/features/attendance/presentation/bloc/attendance_bloc.dart';
+import 'package:vnm/features/attendance/presentation/bloc/cubit/attendance_flow_cubit.dart';
+import 'package:vnm/features/authentication/authentication_module.dart';
+import 'package:vnm/features/general/general_module.dart';
+import 'package:vnm/features/images/image_module.dart';
+import '../../routes/core_module.dart';
+import 'domain/usecases/get_attendance_reports_usecase.dart';
+import 'domain/usecases/get_attendance_usecase.dart';
+import 'presentation/bloc/cubit/attendance_info_cubit.dart';
+import 'presentation/bloc/locate_cubit.dart';
+
+class AttendanceCoreModule extends Module {
+  static const String locate = 'locate';
+  static const String attendance = 'attendance';
+  @override
+  List<Module> get imports =>
+      [CoreModule(), AuthenticationModule(), GeneralModule(), ImageModule()];
+
+  @override
+  void binds(Injector i) {
+    i.add<LocateCubit>(LocateCubit.new, config: blocConfig());
+    i.addSingleton(AttendanceRemoteDataSource.new);
+    i.addSingleton(AttendanceRepositoryImpl.new);
+    i.addSingleton(AttendanceUsecase.new);
+    i.addSingleton(GetAttendanceInfoUsecase.new);
+    i.addSingleton(GetAttendanceReportsUsecase.new);
+    i.addSingleton(FaceVerificationUsecase.new);
+    i.add(AttendanceBloc.new);
+    i.add(AttendanceFlowCubit.new);
+    i.add(AttendanceInfoCubit.new);
+  }
+}
