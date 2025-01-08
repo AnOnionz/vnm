@@ -5,7 +5,7 @@ class Validator {
       r'[a-zA-Z0-9\+\.\_\%\-\+]{1,256}\@[a-zA-Z0-9]'
       r'[a-zA-Z0-9\-]{0,64}(\.[a-zA-Z0-9][a-zA-Z0-9\-]{0,25})+';
 
-  static const _phoneNumberRegExpString = r'(84|0[3|5|7|8|9])+([0-9]{8})\b';
+  static const _phoneNumberRegExpString = r'^(84|0[3|5|7|8|9])\d{8}$';
 
   static final _emailRegex = RegExp(_emailRegExpString, caseSensitive: false);
   static final _phoneNumberRegex = RegExp(_phoneNumberRegExpString);
