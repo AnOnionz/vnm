@@ -183,25 +183,25 @@ class _OutletSelectionPageState extends State<OutletSelectionPage>
                                 padding: EdgeInsets.only(top: 16.h),
                                 child: OutletItem(
                                   onPressed: () {
-                                    if (user!.isFaceVerified == true &&
-                                        user!.isProfileVerified == true) {
-                                      _workPlaceBloc.add(ApplyOutlet(widget
-                                          .entity
-                                          .copyWith(outlet: outlet)));
-                                    } else {
-                                      showFailure(
-                                        title: 'Cập nhật Profile',
-                                        icon: SvgPicture.asset(
-                                            AppIcons.requiredProfileData),
-                                        message:
-                                            'Tài khoản chưa được xác thực. Vui lòng cập nhật ${_getMessage()} trước khi sử dụng tài khoản này.',
-                                        btnText: 'Đến Trang Profile Nhân viên',
-                                        onPressed: () => context.nextRoute(
-                                            ProfileModule.route,
-                                            arguments: _workPlaceBloc
-                                                .state.entity.project!.id!),
-                                      );
-                                    }
+                                    _workPlaceBloc.add(ApplyOutlet(widget.entity
+                                        .copyWith(outlet: outlet)));
+                                    // if (user!.isFaceVerified == true &&
+                                    //     user!.isProfileVerified == true) {
+
+                                    // } else {
+                                    //   showFailure(
+                                    //     title: 'Cập nhật Profile',
+                                    //     icon: SvgPicture.asset(
+                                    //         AppIcons.requiredProfileData),
+                                    //     message:
+                                    //         'Tài khoản chưa được xác thực. Vui lòng cập nhật ${_getMessage()} trước khi sử dụng tài khoản này.',
+                                    //     btnText: 'Đến Trang Profile Nhân viên',
+                                    //     onPressed: () => context.nextRoute(
+                                    //         ProfileModule.route,
+                                    //         arguments: _workPlaceBloc
+                                    //             .state.entity.project!.id!),
+                                    //   );
+                                    // }
                                   },
                                   outlet: outlet,
                                 ),
@@ -228,16 +228,16 @@ class _OutletSelectionPageState extends State<OutletSelectionPage>
         ));
   }
 
-  String _getMessage() {
-    if (user!.isFaceVerified == false && user!.isProfileVerified == false) {
-      return 'hình ảnh xác thực gương mặt và profile';
-    }
-    if (user!.isFaceVerified == false) {
-      return 'hình ảnh xác thực gương mặt';
-    }
-    if (user!.isProfileVerified == false) {
-      return 'profile';
-    }
-    return '';
-  }
+  // String _getMessage() {
+  //   if (user!.isFaceVerified == false && user!.isProfileVerified == false) {
+  //     return 'hình ảnh xác thực gương mặt và profile';
+  //   }
+  //   if (user!.isFaceVerified == false) {
+  //     return 'hình ảnh xác thực gương mặt';
+  //   }
+  //   if (user!.isProfileVerified == false) {
+  //     return 'profile';
+  //   }
+  //   return '';
+  // }
 }

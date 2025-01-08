@@ -173,13 +173,13 @@ class NecessaryBloc extends Bloc<NecessaryEvent, NecessaryState>
       }
     });
 
-    if (!_isLock &&
-        event.feature.featureAttendance != null &&
-        event.feature.featureAttendance!.isFaceRequired! &&
-        !(user!.isFaceVerified ?? false)) {
-      emit(NecessaryFaceVerified(feature: event.feature));
-      _isLock = true;
-    }
+    // if (!_isLock &&
+    //     event.feature.featureAttendance != null &&
+    //     event.feature.featureAttendance!.isFaceRequired! &&
+    //     !(user!.isFaceVerified ?? false)) {
+    //   emit(NecessaryFaceVerified(feature: event.feature));
+    //   _isLock = true;
+    // }
     if (!_isLock) {
       emit(NecessaryUnfastenIn(feature: event.feature));
     }
