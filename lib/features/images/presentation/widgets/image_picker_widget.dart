@@ -1,20 +1,19 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:uuid/uuid.dart';
 import 'package:vnm/core/mixins/fx.dart';
 import 'package:vnm/core/responsive/responsive.dart';
-
 import 'package:vnm/core/services/media/media_service.dart';
 import 'package:vnm/core/widgets/app_indicator.dart';
 import 'package:vnm/core/widgets/notifications.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:uuid/uuid.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../../../../core/constant/icons.dart';
 import '../../../../core/database/database.dart';
-import '../../../../core/firebase/firebase_remote_config_service.dart';
 import '../../../../core/services/network_time/network_time_service.dart';
 import '../../../../core/widgets/popup.dart';
 import '../../../setting/domain/entities/setting_app.dart';
@@ -51,7 +50,7 @@ class ImagePickerWidget extends StatefulWidget {
 class _ImagePickerWidgetState extends State<ImagePickerWidget> {
   final MediaService _service = MediaService();
   final NetworkTimeService _timeService = Modular.get();
-  final _remoteConfig = FirebaseRemoteConfigService();
+  // final _remoteConfig = FirebaseRemoteConfigService();
   final settings = Database.instance.getObject<SettingApp>();
   late ValueNotifier<bool> isWatermarking = ValueNotifier(false);
 
@@ -85,10 +84,10 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
           try {
             final fileWithWatermark = await _service.addWatermark(file);
             if (fileWithWatermark != null) {
-              if (_remoteConfig.saveToGallery == true &&
-                  settings?.saveGallery == true) {
-                _service.saveGallery(fileWithWatermark);
-              }
+              // if (_remoteConfig.saveToGallery == true &&
+              //     settings?.saveGallery == true) {
+              //   _service.saveGallery(fileWithWatermark);
+              // }
               final image = ImageDynamic(
                 uuid: Uuid().v1(),
                 path: fileWithWatermark.path,
@@ -110,10 +109,10 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
             widget.isWatermarking?.value = false;
           }
         } else {
-          if (_remoteConfig.saveToGallery == true &&
-              settings?.saveGallery == true) {
-            _service.saveGallery(file);
-          }
+          // if (_remoteConfig.saveToGallery == true &&
+          //     settings?.saveGallery == true) {
+          //   _service.saveGallery(file);
+          // }
           final image = ImageDynamic(
             uuid: Uuid().v1(),
             path: file.path,

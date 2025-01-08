@@ -57,8 +57,6 @@ dependencies:
   device_info_plus: ^10.1.0
   string_validator_plus: ^0.0.7
   flutter_image_compress: ^2.3.0
-  firebase_core: ^3.4.0
-  firebase_remote_config: ^5.1.0
   pretty_dio_logger: ^1.4.0
 
   #widget
