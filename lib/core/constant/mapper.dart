@@ -76,12 +76,13 @@ final class Mapper {
       case 'phoneNumber':
         return (String? value) {
           // Check if the phone format matches the regular expression
-          if (value.isNotEmptyAndNotNull &&
-              (value!.length > 10 || !Validator.isValidPhoneNumber(value))) {
-            return 'Số điện thoại chưa chính xác';
-          }
           // If the phone is valid, return null (no error message)
-          return null;
+          if (value.isNotEmptyAndNotNull &&
+              Validator.isValidPhoneNumber(value!)) {
+            return null;
+          }
+
+          return 'Số điện thoại chưa chính xác';
         };
 
       case 'cccd':
