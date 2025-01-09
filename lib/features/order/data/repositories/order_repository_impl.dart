@@ -306,7 +306,7 @@ class OrderRepositoryImpl extends Repository
       if (order.id == null) {
         newOrder = await _remote.createOrder(order);
         if (newOrder != null) {
-          order = order.copyWith(id: order.id);
+          order = order.copyWith(id: newOrder.id);
           await updatePhotos(order);
           order = order.copyWith(status: SyncStatus.synced, id: newOrder.id!);
         }
