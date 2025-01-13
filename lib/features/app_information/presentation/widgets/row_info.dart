@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/mixins/fx.dart';
 
 import '../../../../core/constant/colors.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/services/map/google_map_service.dart';
+import 'package:fms/core/services/map/google_map_service.dart';
 
 import '../core/client/dio_client.dart';
 import '../core/localization/locale_manager.dart';

@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:auth0_flutter/auth0_flutter.dart';
-import 'package:vnm/core/client/dio_client.dart';
-import 'package:vnm/features/profile/data/datasources/profile_local_datasource.dart';
+import 'package:fms/core/client/dio_client.dart';
+import 'package:fms/features/profile/data/datasources/profile_local_datasource.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '/core/constant/type_def.dart';

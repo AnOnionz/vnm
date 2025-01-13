@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/sampling/domain/entities/sampling_entity.dart';
-import 'package:vnm/features/sampling/domain/usecases/update_samplings_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/sampling/domain/entities/sampling_entity.dart';
+import 'package:fms/features/sampling/domain/usecases/update_samplings_usecase.dart';
 
 part 'sampling_event.dart';
 part 'sampling_state.dart';

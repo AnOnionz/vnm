@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
 
 import '../../../home/domain/entities/general_item_data.dart';
 import '../../domain/entities/customer_identity.dart';

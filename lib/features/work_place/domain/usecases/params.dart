@@ -1,5 +1,5 @@
-import 'package:vnm/core/usecase/usecase.dart';
-import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:fms/core/usecase/usecase.dart';
+import 'package:fms/features/work_place/domain/entities/work_place_entity.dart';
 
 class WorkPlaceParams extends Params {
   final WorkPlaceEntity enitty;

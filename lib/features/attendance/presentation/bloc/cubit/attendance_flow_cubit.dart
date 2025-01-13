@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
 
 import '../../../attendance_core_module.dart';
 

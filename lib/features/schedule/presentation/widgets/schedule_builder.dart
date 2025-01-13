@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/utilities/flex_extention.dart';
-import 'package:vnm/core/widgets/notifications.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/schedule/presentation/services/schedule_service.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/utilities/flex_extention.dart';
+import 'package:fms/core/widgets/notifications.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/schedule/presentation/services/schedule_service.dart';
 
 class ScheduleBuilder extends StatefulWidget {
   final FeatureEntity feature;

@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
-import 'package:vnm/features/sampling/domain/entities/sampling_entity.dart';
-import 'package:vnm/features/sampling/domain/usecases/get_samplings_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/sampling/domain/entities/sampling_entity.dart';
+import 'package:fms/features/sampling/domain/usecases/get_samplings_usecase.dart';
 
 part 'get_samplings_state.dart';
 

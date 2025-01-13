@@ -1,6 +1,6 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/services.dart';
-import 'package:vnm/core/mixins/extension/string_ext.dart';
+import 'package:fms/core/mixins/extension/string_ext.dart';
 
 final kNumberFormater = CurrencyTextInputFormatter.currency(
   symbol: '',

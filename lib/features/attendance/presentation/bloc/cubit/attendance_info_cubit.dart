@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/attendance/domain/entities/attendance_entity.dart';
-import 'package:vnm/features/attendance/domain/usecases/attendance_usecase.dart';
-import 'package:vnm/features/attendance/domain/usecases/get_attendance_usecase.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/attendance/domain/entities/attendance_entity.dart';
+import 'package:fms/features/attendance/domain/usecases/attendance_usecase.dart';
+import 'package:fms/features/attendance/domain/usecases/get_attendance_usecase.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
 
 import '../../../../general/presentation/bloc/general_bloc.dart';
 

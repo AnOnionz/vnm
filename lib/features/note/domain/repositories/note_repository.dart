@@ -1,5 +1,5 @@
-import 'package:vnm/features/note/domain/entities/note_entity.dart';
-import 'package:vnm/features/report/domain/entities/photo_entity.dart';
+import 'package:fms/features/note/domain/entities/note_entity.dart';
+import 'package:fms/features/report/domain/entities/photo_entity.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../../general/domain/entities/config_entity.dart';

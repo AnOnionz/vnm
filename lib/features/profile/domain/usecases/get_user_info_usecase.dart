@@ -1,7 +1,7 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/usecase/usecase.dart';
-import 'package:vnm/features/profile/data/repositories/profile_repository_impl.dart';
-import 'package:vnm/features/statistic/domain/entities/employee_entity.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/usecase/usecase.dart';
+import 'package:fms/features/profile/data/repositories/profile_repository_impl.dart';
+import 'package:fms/features/statistic/domain/entities/employee_entity.dart';
 
 class GetUserInfoUsecase extends UseCase<EmployeeEntity?, void> {
   final ProfileRepositoryImpl _repository;

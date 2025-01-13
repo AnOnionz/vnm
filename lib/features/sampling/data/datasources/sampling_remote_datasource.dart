@@ -1,4 +1,4 @@
-import 'package:vnm/core/utilities/parser.dart';
+import 'package:fms/core/utilities/parser.dart';
 
 import '../../../../core/data_source/remote_datasource.dart';
 import '../../domain/entities/sampling_entity.dart';

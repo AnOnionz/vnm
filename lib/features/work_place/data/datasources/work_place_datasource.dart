@@ -1,8 +1,8 @@
-import 'package:vnm/core/utilities/parser.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/booth_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/project_entity.dart';
+import 'package:fms/core/utilities/parser.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/work_place/domain/entities/booth_entity.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/features/work_place/domain/entities/project_entity.dart';
 
 import '../../../../core/data_source/remote_datasource.dart';
 import '../../domain/entities/work_place_entity.dart';

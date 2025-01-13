@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/button/flat.dart';
-import 'package:vnm/features/home/home_module.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/button/flat.dart';
+import 'package:fms/features/home/home_module.dart';
 
 import 'button/outline.dart';
 

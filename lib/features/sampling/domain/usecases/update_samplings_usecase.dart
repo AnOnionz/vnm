@@ -1,4 +1,4 @@
-import 'package:vnm/core/mixins/extension/func_ext.dart';
+import 'package:fms/core/mixins/extension/func_ext.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../../../core/usecase/usecase.dart';

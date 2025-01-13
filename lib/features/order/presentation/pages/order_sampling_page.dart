@@ -1,11 +1,11 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/styles/theme.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
-import 'package:vnm/features/order/presentation/widgets/data_feature_widget.dart';
-import 'package:vnm/features/order/presentation/widgets/sampling/sampling_container.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/styles/theme.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/presentation/widgets/data_feature_widget.dart';
+import 'package:fms/features/order/presentation/widgets/sampling/sampling_container.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../../../general/domain/entities/config_entity.dart';

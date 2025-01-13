@@ -1,5 +1,5 @@
-import 'package:vnm/core/data_source/local_data_source.dart';
-import 'package:vnm/features/general/domain/entities/general_entity.dart';
+import 'package:fms/core/data_source/local_data_source.dart';
+import 'package:fms/features/general/domain/entities/general_entity.dart';
 
 abstract class IGeneralLocalDataSource {
   void cacheGeneral(GeneralEntity general);

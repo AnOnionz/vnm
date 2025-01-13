@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:vnm/features/statistic/domain/entities/employee_entity.dart';
+import 'package:fms/features/statistic/domain/entities/employee_entity.dart';
 
 import '../../../general/domain/entities/config_entity.dart';
 

@@ -1,14 +1,14 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/features/crawl/data/datasources/crawl_local_datasource.dart';
-import 'package:vnm/features/crawl/domain/entities/crawl_quantity_entity.dart';
-import 'package:vnm/features/crawl/domain/entities/recently_quantity_entity.dart';
-import 'package:vnm/features/crawl/domain/repositories/crawl_repository.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/features/crawl/data/datasources/crawl_local_datasource.dart';
+import 'package:fms/features/crawl/domain/entities/crawl_quantity_entity.dart';
+import 'package:fms/features/crawl/domain/entities/recently_quantity_entity.dart';
+import 'package:fms/features/crawl/domain/repositories/crawl_repository.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../core/services/network_time/network_time_service.dart';

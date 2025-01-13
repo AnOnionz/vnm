@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/utilities/flex_extention.dart';
-import 'package:vnm/core/widgets/app_indicator.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/utilities/flex_extention.dart';
+import 'package:fms/core/widgets/app_indicator.dart';
 
 class LoadingAlert extends StatelessWidget {
   final String message;

@@ -1,11 +1,11 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/home/presentation/widgets/task_box.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/home/presentation/widgets/task_box.dart';
 
 import '../bloc/necessary_bloc.dart';
 

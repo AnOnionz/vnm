@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/authentication/domain/usecases/logout_success_usecase%20copy.dart';
-import 'package:vnm/features/profile/profile_module.dart';
+import 'package:fms/features/authentication/domain/usecases/logout_success_usecase%20copy.dart';
+import 'package:fms/features/profile/profile_module.dart';
 
 import '../../routes/core_module.dart';
 import 'data/datasources/auth_local_data_source.dart';

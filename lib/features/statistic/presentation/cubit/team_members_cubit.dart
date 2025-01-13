@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/statistic/domain/usecases/fetch_team_members_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/statistic/domain/usecases/fetch_team_members_usecase.dart';
 
 import '../../domain/entities/employee_entity.dart';
 

@@ -1,6 +1,6 @@
-import 'package:vnm/features/attendance/domain/entities/attendance_entity.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/project_entity.dart';
+import 'package:fms/features/attendance/domain/entities/attendance_entity.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/work_place/domain/entities/project_entity.dart';
 import 'package:isar/isar.dart';
 
 // import '../../../../core/utilities/parser.dart';

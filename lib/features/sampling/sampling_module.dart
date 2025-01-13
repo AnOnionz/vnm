@@ -1,11 +1,11 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/sampling/data/datasources/sampling_remote_datasource.dart';
-import 'package:vnm/features/sampling/data/repositories/sampling_repository_impl.dart';
-import 'package:vnm/features/sampling/domain/usecases/get_samplings_no_synced_usecase.dart';
-import 'package:vnm/features/sampling/domain/usecases/get_samplings_not_completed_usecase.dart';
-import 'package:vnm/features/sampling/domain/usecases/get_samplings_usecase.dart';
-import 'package:vnm/features/sampling/domain/usecases/update_samplings_usecase.dart';
-import 'package:vnm/features/sampling/presentation/pages/sampling_page.dart';
+import 'package:fms/features/sampling/data/datasources/sampling_remote_datasource.dart';
+import 'package:fms/features/sampling/data/repositories/sampling_repository_impl.dart';
+import 'package:fms/features/sampling/domain/usecases/get_samplings_no_synced_usecase.dart';
+import 'package:fms/features/sampling/domain/usecases/get_samplings_not_completed_usecase.dart';
+import 'package:fms/features/sampling/domain/usecases/get_samplings_usecase.dart';
+import 'package:fms/features/sampling/domain/usecases/update_samplings_usecase.dart';
+import 'package:fms/features/sampling/presentation/pages/sampling_page.dart';
 
 import '../../routes/routes.dart';
 import '../home/domain/entities/general_item_data.dart';

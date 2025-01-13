@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../../../../core/constant/icons.dart';

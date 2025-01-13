@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/app_bar.dart';
-import 'package:vnm/features/app_information/presentation/widgets/row_info.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/profile/mixin_user.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/app_bar.dart';
+import 'package:fms/features/app_information/presentation/widgets/row_info.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/profile/mixin_user.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../../../core/constant/images.dart';

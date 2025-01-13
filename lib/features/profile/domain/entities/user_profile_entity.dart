@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:equatable/equatable.dart';
 
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/features/profile/domain/entities/bank_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/features/profile/domain/entities/bank_entity.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../core/constant/mapper.dart';

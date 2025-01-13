@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/schedule/presentation/widgets/schedule_builder.dart';
-import 'package:vnm/features/urgency/domain/entities/urgency_entity.dart';
-import 'package:vnm/features/urgency/presentation/cubit/urgency_cubit.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/schedule/presentation/widgets/schedule_builder.dart';
+import 'package:fms/features/urgency/domain/entities/urgency_entity.dart';
+import 'package:fms/features/urgency/presentation/cubit/urgency_cubit.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../../../../core/utilities/overlay.dart';

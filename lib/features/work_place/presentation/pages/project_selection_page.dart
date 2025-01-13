@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/styles/theme.dart';
-import 'package:vnm/features/work_place/domain/entities/project_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
-import 'package:vnm/features/work_place/presentation/bloc/work_place_bloc.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/styles/theme.dart';
+import 'package:fms/features/work_place/domain/entities/project_entity.dart';
+import 'package:fms/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:fms/features/work_place/presentation/bloc/work_place_bloc.dart';
 
 import '../../../../core/widgets/app_bar.dart';
 import '../../../../core/widgets/app_indicator.dart';

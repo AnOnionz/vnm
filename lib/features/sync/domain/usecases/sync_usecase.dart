@@ -1,8 +1,8 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/usecase/usecase.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/domain/entities/data_entity.dart';
-import 'package:vnm/features/sync/data/repositories/sync_repository_impl.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/usecase/usecase.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/domain/entities/data_entity.dart';
+import 'package:fms/features/sync/data/repositories/sync_repository_impl.dart';
 
 class SyncUseCase extends UseCase<void, Map<FeatureEntity, List<BaseEntity>>> {
   final SyncRepositoryImpl _syncRepository;

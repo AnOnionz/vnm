@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:vnm/features/sign/presentation/bloc/sign_bloc.dart';
-import 'package:vnm/features/sign/presentation/pages/login_page.dart';
+import 'package:fms/features/sign/presentation/bloc/sign_bloc.dart';
+import 'package:fms/features/sign/presentation/pages/login_page.dart';
 
 import '../../routes/routes.dart';
 import '../authentication/authentication_module.dart';

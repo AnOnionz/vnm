@@ -2,10 +2,10 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/utilities/parser.dart';
-import 'package:vnm/features/general/domain/entities/data_entity.dart';
-import 'package:vnm/features/oos/data/models/oos_model.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/utilities/parser.dart';
+import 'package:fms/features/general/domain/entities/data_entity.dart';
+import 'package:fms/features/oos/data/models/oos_model.dart';
 import 'package:isar/isar.dart';
 
 part 'oos_entity.g.dart';

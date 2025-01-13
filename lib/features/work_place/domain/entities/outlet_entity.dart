@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/mixins/fx.dart';
 import 'package:isar/isar.dart';
 
 part 'outlet_entity.g.dart';

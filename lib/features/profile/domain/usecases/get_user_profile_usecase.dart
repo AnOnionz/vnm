@@ -1,4 +1,4 @@
-import 'package:vnm/features/profile/domain/entities/user_profile_entity.dart';
+import 'package:fms/features/profile/domain/entities/user_profile_entity.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../../../core/usecase/usecase.dart';

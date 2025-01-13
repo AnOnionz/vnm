@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/urgency/domain/entities/urgency_entity.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/urgency/domain/entities/urgency_entity.dart';
 
 class UrgencyTeamItem extends StatelessWidget {
   final UrgencyEntity urgency;

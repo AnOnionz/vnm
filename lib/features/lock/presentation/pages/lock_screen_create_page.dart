@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screen_lock/flutter_screen_lock.dart';
-import 'package:vnm/core/widgets/app_indicator.dart';
+import 'package:fms/core/widgets/app_indicator.dart';
 
 import '../bloc/lock_bloc.dart';
 

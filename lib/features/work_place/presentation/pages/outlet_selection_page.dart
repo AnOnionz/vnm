@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/styles/theme.dart';
-import 'package:vnm/core/widgets/app_bar.dart';
-import 'package:vnm/core/widgets/popup.dart';
-import 'package:vnm/features/profile/mixin_user.dart';
-import 'package:vnm/features/profile/profile_module.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/styles/theme.dart';
+import 'package:fms/core/widgets/app_bar.dart';
+import 'package:fms/features/profile/mixin_user.dart';
+import 'package:fms/features/profile/profile_module.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/features/work_place/domain/entities/work_place_entity.dart';
 import 'package:fuzzy/fuzzy.dart';
 
 import '../../../../core/widgets/app_indicator.dart';
@@ -62,7 +61,7 @@ class _OutletSelectionPageState extends State<OutletSelectionPage>
               child: InkWell(
                   child: SvgPicture.asset(AppIcons.profileEdit),
                   onTap: () => context.nextRoute(ProfileModule.route,
-                      arguments: _workPlaceBloc.state.entity.project!.id)),
+                      arguments: widget.entity.project!.id)),
             )),
         body: SafeArea(
           child: Padding(

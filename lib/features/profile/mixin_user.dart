@@ -1,5 +1,5 @@
-import 'package:vnm/core/database/database.dart';
-import 'package:vnm/features/statistic/domain/entities/employee_entity.dart';
+import 'package:fms/core/database/database.dart';
+import 'package:fms/features/statistic/domain/entities/employee_entity.dart';
 
 mixin UserMixin {
   EmployeeUserEntity? get user =>

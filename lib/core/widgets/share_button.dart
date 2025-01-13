@@ -3,14 +3,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/styles/theme.dart';
-import 'package:vnm/core/utilities/overlay.dart';
-import 'package:vnm/core/utilities/share.dart';
-import 'package:vnm/core/widgets/button/flat.dart';
-import 'package:vnm/core/widgets/button/outline.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/styles/theme.dart';
+import 'package:fms/core/utilities/overlay.dart';
+import 'package:fms/core/utilities/share.dart';
+import 'package:fms/core/widgets/button/flat.dart';
+import 'package:fms/core/widgets/button/outline.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../features/report/domain/entities/photo_entity.dart';

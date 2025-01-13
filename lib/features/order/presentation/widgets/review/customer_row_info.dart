@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/mixins/extension/context_ext.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/mixins/extension/context_ext.dart';
+import 'package:fms/core/responsive/responsive.dart';
 
 class CustomerRowInfo extends StatelessWidget {
   final String? label;

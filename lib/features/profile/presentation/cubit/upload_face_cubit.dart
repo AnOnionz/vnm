@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/features/profile/domain/usecases/upload_face_verify_image_usecase.dart';
-import 'package:vnm/features/profile/mixin_user.dart';
+import 'package:fms/features/profile/domain/usecases/upload_face_verify_image_usecase.dart';
+import 'package:fms/features/profile/mixin_user.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/errors/failure.dart';

@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/responsive/responsive.dart';
 
 import '../../../../core/cache_image_network/cached_image.dart';
 import '../../../../core/utilities/overlay.dart';

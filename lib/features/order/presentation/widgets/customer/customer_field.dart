@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/mapper.dart';
+import 'package:fms/core/constant/mapper.dart';
 
 import '../../../../general/domain/entities/config_entity.dart';
 import '../../../domain/entities/order_entity.dart';

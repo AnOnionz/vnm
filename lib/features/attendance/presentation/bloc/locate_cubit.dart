@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/core/services/location/location_service.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/core/services/location/location_service.dart';
 import 'package:geolocator/geolocator.dart';
 
 part 'locate_state.dart';

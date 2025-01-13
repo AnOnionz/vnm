@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
 
 import '../../../general/domain/entities/config_entity.dart';
 import '../../domain/usecases/get_order.usecase.dart';

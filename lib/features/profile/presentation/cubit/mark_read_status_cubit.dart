@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/profile/domain/usecases/mark_read_profile_status_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/profile/domain/usecases/mark_read_profile_status_usecase.dart';
 
 part 'mark_read_status_state.dart';
 

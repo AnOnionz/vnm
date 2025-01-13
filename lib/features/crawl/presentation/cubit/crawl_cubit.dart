@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/core/widgets/popup.dart';
-import 'package:vnm/features/crawl/domain/entities/crawl_quantity_entity.dart';
-import 'package:vnm/features/crawl/domain/usecases/crawl_data_usecase.dart';
-import 'package:vnm/features/crawl/domain/usecases/get_quantities_usecase.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/domain/entities/general_entity.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/core/widgets/popup.dart';
+import 'package:fms/features/crawl/domain/entities/crawl_quantity_entity.dart';
+import 'package:fms/features/crawl/domain/usecases/crawl_data_usecase.dart';
+import 'package:fms/features/crawl/domain/usecases/get_quantities_usecase.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/domain/entities/general_entity.dart';
 
 part 'crawl_state.dart';
 

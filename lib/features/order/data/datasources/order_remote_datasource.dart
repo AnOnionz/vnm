@@ -1,8 +1,8 @@
-import 'package:vnm/core/utilities/parser.dart';
-import 'package:vnm/features/order/domain/entities/customer_identity.dart';
-import 'package:vnm/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
-import 'package:vnm/features/order/domain/entities/customer_verification_code_entity.dart';
-import 'package:vnm/features/report/domain/entities/photo_entity.dart';
+import 'package:fms/core/utilities/parser.dart';
+import 'package:fms/features/order/domain/entities/customer_identity.dart';
+import 'package:fms/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
+import 'package:fms/features/order/domain/entities/customer_verification_code_entity.dart';
+import 'package:fms/features/report/domain/entities/photo_entity.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../images/data/datasource/images_remote_datasource.dart';

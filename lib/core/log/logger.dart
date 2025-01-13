@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/mixins/fx.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../database/database.dart';

@@ -2,11 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/leave/domain/entities/project.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/leave/domain/entities/project.dart';
 
 class ProjectAvailable extends StatelessWidget {
   final Project project;

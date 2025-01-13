@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:vnm/core/constant/colors.dart';
+import 'package:fms/core/constant/colors.dart';
 
 class AdvancedSwitch extends StatefulWidget {
   const AdvancedSwitch({

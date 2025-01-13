@@ -1,8 +1,8 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/features/work_place/domain/entities/booth_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/features/work_place/domain/entities/booth_entity.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/features/work_place/domain/entities/work_place_entity.dart';
 
 import '../../../../core/usecase/either.dart';
 import '../../domain/entities/project_entity.dart';

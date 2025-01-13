@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/oos/domain/entities/oos_entity.dart';
-import 'package:vnm/features/oos/domain/usecases/create_oos_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/oos/domain/entities/oos_entity.dart';
+import 'package:fms/features/oos/domain/usecases/create_oos_usecase.dart';
 
 part 'oos_state.dart';
 

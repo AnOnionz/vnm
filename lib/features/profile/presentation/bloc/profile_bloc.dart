@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/features/profile/domain/entities/user_profile_entity.dart';
-import 'package:vnm/features/profile/domain/usecases/create_profile_usecase.dart';
-import 'package:vnm/features/profile/mixin_user.dart';
+import 'package:fms/features/profile/domain/entities/user_profile_entity.dart';
+import 'package:fms/features/profile/domain/usecases/create_profile_usecase.dart';
+import 'package:fms/features/profile/mixin_user.dart';
 
 import '../../../../core/errors/failure.dart';
 

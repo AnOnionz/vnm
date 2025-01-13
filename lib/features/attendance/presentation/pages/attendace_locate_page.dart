@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/images.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/app_bar.dart';
-import 'package:vnm/core/widgets/app_indicator.dart';
-import 'package:vnm/core/widgets/button/flat.dart';
-import 'package:vnm/features/attendance/attendance_core_module.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
-import 'package:vnm/features/home/home_module.dart';
+import 'package:fms/core/constant/images.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/app_bar.dart';
+import 'package:fms/core/widgets/app_indicator.dart';
+import 'package:fms/core/widgets/button/flat.dart';
+import 'package:fms/features/attendance/attendance_core_module.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/home/home_module.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../../../../core/widgets/button/outline.dart';

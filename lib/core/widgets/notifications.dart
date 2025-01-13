@@ -2,11 +2,11 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/popup.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/popup.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
 
 import '../../features/home/presentation/widgets/require_task_notify.dart';
 import '../../features/order/domain/entities/customer_identity.dart';

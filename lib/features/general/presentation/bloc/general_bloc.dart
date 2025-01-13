@@ -3,18 +3,18 @@ import 'package:bloc_concurrency/bloc_concurrency.dart';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/features/attendance/domain/entities/attendance_entity.dart';
-import 'package:vnm/features/attendance/domain/usecases/get_attendance_usecase.dart';
-import 'package:vnm/features/general/domain/entities/general_entity.dart';
-import 'package:vnm/features/general/domain/usecase/clear_general_usercase.dart';
-import 'package:vnm/features/general/domain/usecase/create_general_usecase.dart';
-import 'package:vnm/features/general/domain/usecase/get_general_usecase.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/features/attendance/domain/entities/attendance_entity.dart';
+import 'package:fms/features/attendance/domain/usecases/get_attendance_usecase.dart';
+import 'package:fms/features/general/domain/entities/general_entity.dart';
+import 'package:fms/features/general/domain/usecase/clear_general_usercase.dart';
+import 'package:fms/features/general/domain/usecase/create_general_usecase.dart';
+import 'package:fms/features/general/domain/usecase/get_general_usecase.dart';
 
-import 'package:vnm/features/general/domain/usecase/refresh_general_usecase.dart';
-import 'package:vnm/features/profile/domain/usecases/get_user_info_usecase.dart';
-import 'package:vnm/features/profile/mixin_user.dart';
-import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:fms/features/general/domain/usecase/refresh_general_usecase.dart';
+import 'package:fms/features/profile/domain/usecases/get_user_info_usecase.dart';
+import 'package:fms/features/profile/mixin_user.dart';
+import 'package:fms/features/work_place/domain/entities/work_place_entity.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/services/network_time/network_time_service.dart';

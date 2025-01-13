@@ -1,4 +1,4 @@
-import 'package:vnm/features/general/domain/entities/general_entity.dart';
+import 'package:fms/features/general/domain/entities/general_entity.dart';
 
 import '../../../general/domain/entities/config_entity.dart';
 

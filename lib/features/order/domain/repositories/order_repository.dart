@@ -1,8 +1,8 @@
-import 'package:vnm/features/order/domain/entities/customer_identity.dart';
-import 'package:vnm/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
-import 'package:vnm/features/order/domain/entities/customer_verification_code_entity.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
-import 'package:vnm/features/order/domain/entities/verification_code_entity.dart';
+import 'package:fms/features/order/domain/entities/customer_identity.dart';
+import 'package:fms/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
+import 'package:fms/features/order/domain/entities/customer_verification_code_entity.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/domain/entities/verification_code_entity.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../../general/domain/entities/config_entity.dart';

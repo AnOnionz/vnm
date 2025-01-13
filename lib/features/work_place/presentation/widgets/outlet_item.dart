@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/mixins/common.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/mixins/common.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
 
 class OutletItem extends StatelessWidget {
   final VoidCallback onPressed;

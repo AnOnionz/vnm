@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/core/widgets/popup.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/domain/entities/general_entity.dart';
-import 'package:vnm/features/report/domain/usecases/create_photos_usecase.dart';
-import 'package:vnm/features/report/domain/usecases/get_photos_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/core/widgets/popup.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/domain/entities/general_entity.dart';
+import 'package:fms/features/report/domain/usecases/create_photos_usecase.dart';
+import 'package:fms/features/report/domain/usecases/get_photos_usecase.dart';
 
 import '../../domain/entities/photo_entity.dart';
 

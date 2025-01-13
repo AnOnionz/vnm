@@ -1,4 +1,4 @@
-import 'package:vnm/core/constant/type_def.dart';
+import 'package:fms/core/constant/type_def.dart';
 
 import '../../../general/domain/entities/config_entity.dart';
 import '../entities/sampling_entity.dart';

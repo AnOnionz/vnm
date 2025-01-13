@@ -1,11 +1,11 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/order/presentation/widgets/customer/customer_field.dart';
-import 'package:vnm/features/order/presentation/widgets/data_feature_widget.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/order/presentation/widgets/customer/customer_field.dart';
+import 'package:fms/features/order/presentation/widgets/data_feature_widget.dart';
 
 import '../../../../../core/errors/failure.dart';
 import '../../../../../core/widgets/popup.dart';

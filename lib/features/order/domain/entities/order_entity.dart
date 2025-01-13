@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:vnm/core/constant/enum.dart';
+import 'package:fms/core/constant/enum.dart';
 import 'package:isar/isar.dart';
 
 import '../../../../core/utilities/parser.dart';

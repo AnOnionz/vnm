@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:vnm/core/constant/enum.dart';
+import 'package:fms/core/constant/enum.dart';
 
 class ProfileStatusEntity {
   final int id;

@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/mixins/common.dart';
-import 'package:vnm/core/services/connectivity/connectivity_service.dart';
+import 'package:fms/core/mixins/common.dart';
+import 'package:fms/core/services/connectivity/connectivity_service.dart';
 
 import '/core/constant/type_def.dart';
 import '/core/errors/app_exception.dart';

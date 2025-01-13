@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
-import 'package:vnm/features/work_place/domain/usecases/get_projects_usecase.dart';
-import 'package:vnm/features/work_place/domain/usecases/params.dart';
+import 'package:fms/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:fms/features/work_place/domain/usecases/get_projects_usecase.dart';
+import 'package:fms/features/work_place/domain/usecases/params.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../domain/usecases/get_booths_usecase.dart';

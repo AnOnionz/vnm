@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:auth0_flutter/auth0_flutter.dart';
-import 'package:vnm/core/mixins/common.dart';
+import 'package:fms/core/mixins/common.dart';
 
 import '../../../../core/constant/keys.dart';
 import '../../../../core/environment/env.dart';

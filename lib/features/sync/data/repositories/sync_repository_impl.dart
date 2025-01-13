@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/core/usecase/either.dart';
-import 'package:vnm/features/crawl/data/repositories/crawl_repository_impl.dart';
-import 'package:vnm/features/general/domain/entities/data_entity.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/generic_data/data/repositories/generic_data_repository_impl.dart';
-import 'package:vnm/features/note/data/repositories/note_repository_impl.dart';
-import 'package:vnm/features/oos/data/repositories/oos_repository_impl.dart';
-import 'package:vnm/features/order/data/repositories/order_repository_impl.dart';
-import 'package:vnm/features/report/data/repositories/report_repository_impl.dart';
-import 'package:vnm/features/sync/domain/repositories/sync_repository.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/core/usecase/either.dart';
+import 'package:fms/features/crawl/data/repositories/crawl_repository_impl.dart';
+import 'package:fms/features/general/domain/entities/data_entity.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/generic_data/data/repositories/generic_data_repository_impl.dart';
+import 'package:fms/features/note/data/repositories/note_repository_impl.dart';
+import 'package:fms/features/oos/data/repositories/oos_repository_impl.dart';
+import 'package:fms/features/order/data/repositories/order_repository_impl.dart';
+import 'package:fms/features/report/data/repositories/report_repository_impl.dart';
+import 'package:fms/features/sync/domain/repositories/sync_repository.dart';
 
 import '../../../../core/constant/enum.dart';
 import '../../../../core/errors/app_exception.dart';

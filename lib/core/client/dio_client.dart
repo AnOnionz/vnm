@@ -6,10 +6,10 @@ import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/features/authentication/domain/usecases/has_valid_credentials_usecase.dart';
-import 'package:vnm/features/authentication/domain/usecases/renew_credentials_usecase.dart';
-import 'package:vnm/features/authentication/presentation/blocs/authentication_bloc.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/features/authentication/domain/usecases/has_valid_credentials_usecase.dart';
+import 'package:fms/features/authentication/domain/usecases/renew_credentials_usecase.dart';
+import 'package:fms/features/authentication/presentation/blocs/authentication_bloc.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '/core/client/api_service.dart';

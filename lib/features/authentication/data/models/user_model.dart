@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:auth0_flutter/auth0_flutter.dart';
-import 'package:vnm/features/authentication/domain/entities/user_entity.dart';
+import 'package:fms/features/authentication/domain/entities/user_entity.dart';
 import 'package:isar/isar.dart';
 
 import '../../../../core/utilities/parser.dart';

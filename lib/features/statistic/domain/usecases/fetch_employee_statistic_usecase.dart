@@ -1,6 +1,6 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/usecase/usecase.dart';
-import 'package:vnm/features/statistic/domain/entities/statistic_entity.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/usecase/usecase.dart';
+import 'package:fms/features/statistic/domain/entities/statistic_entity.dart';
 
 import '../../data/repositories/statistic_repository_impl.dart';
 

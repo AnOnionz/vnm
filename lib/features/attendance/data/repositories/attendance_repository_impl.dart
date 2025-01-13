@@ -1,10 +1,10 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/core/usecase/either.dart';
-import 'package:vnm/features/attendance/data/datasources/attendance_remote_datasource.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/core/usecase/either.dart';
+import 'package:fms/features/attendance/data/datasources/attendance_remote_datasource.dart';
 
-import 'package:vnm/features/attendance/domain/repositories/attendance_repository.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/attendance/domain/repositories/attendance_repository.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 

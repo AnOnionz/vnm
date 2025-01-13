@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:vnm/features/attendance/attendance_core_module.dart';
+import 'package:fms/features/attendance/attendance_core_module.dart';
 
 import '../../core/constant/enum.dart';
 import '../../routes/routes.dart';

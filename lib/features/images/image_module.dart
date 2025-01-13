@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/images/data/datasource/delete_image_remote_datasource.dart';
-import 'package:vnm/features/images/presentation/bloc/delete_image_bloc.dart';
+import 'package:fms/features/images/data/datasource/delete_image_remote_datasource.dart';
+import 'package:fms/features/images/presentation/bloc/delete_image_bloc.dart';
 
-import 'package:vnm/routes/core_module.dart';
+import 'package:fms/routes/core_module.dart';
 
 import 'data/datasource/delete_image_local_remote_datasource.dart';
 

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
 
 class CustomerInfoWithLuckyDrawEntity {
   final List<CustomerInfoField> customerInfoFields;

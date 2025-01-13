@@ -1,8 +1,8 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/core/usecase/either.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/urgency/domain/entities/urgency_entity.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/core/usecase/either.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/urgency/domain/entities/urgency_entity.dart';
 
 import '../../domain/repositories/urgency_repository.dart';
 import '../datasources/urgency_remote_datasource.dart';

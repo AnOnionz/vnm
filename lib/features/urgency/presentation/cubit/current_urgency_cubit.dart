@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/urgency/domain/entities/urgency_entity.dart';
-import 'package:vnm/features/urgency/domain/usecases/current_urgency_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/urgency/domain/entities/urgency_entity.dart';
+import 'package:fms/features/urgency/domain/usecases/current_urgency_usecase.dart';
 
 part 'current_urgency_state.dart';
 

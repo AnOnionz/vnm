@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/core/widgets/popup.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/domain/entities/general_entity.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/core/widgets/popup.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/domain/entities/general_entity.dart';
 
 import '../../../report/domain/entities/photo_entity.dart';
 import '../../domain/entities/note_entity.dart';

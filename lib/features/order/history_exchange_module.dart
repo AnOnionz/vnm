@@ -1,13 +1,13 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
-import 'package:vnm/features/order/domain/usecases/delete_order_usecase.dart';
-import 'package:vnm/features/order/order_module.dart';
-import 'package:vnm/features/order/presentation/cubit/delete_order_cubit.dart';
-import 'package:vnm/features/order/presentation/cubit/verification_code_cubit.dart';
-import 'package:vnm/features/order/presentation/pages/order_page.dart';
-import 'package:vnm/features/order/presentation/pages/sms_otp_page.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/domain/usecases/delete_order_usecase.dart';
+import 'package:fms/features/order/order_module.dart';
+import 'package:fms/features/order/presentation/cubit/delete_order_cubit.dart';
+import 'package:fms/features/order/presentation/cubit/verification_code_cubit.dart';
+import 'package:fms/features/order/presentation/pages/order_page.dart';
+import 'package:fms/features/order/presentation/pages/sms_otp_page.dart';
 
 import '../../routes/routes.dart';
 import 'domain/usecases/get_order.usecase.dart';

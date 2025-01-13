@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/mixins/fx.dart';
 import 'package:isar/isar.dart';
 
 part 'config_entity.g.dart';

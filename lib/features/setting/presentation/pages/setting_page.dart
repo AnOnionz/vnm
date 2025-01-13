@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/app_bar.dart';
-import 'package:vnm/features/setting/presentation/cubit/setting_cubit.dart';
-import 'package:vnm/features/setting/presentation/widgets/setting_item.dart';
-import 'package:vnm/features/setting/setting_module.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/app_bar.dart';
+import 'package:fms/features/setting/presentation/cubit/setting_cubit.dart';
+import 'package:fms/features/setting/presentation/widgets/setting_item.dart';
+import 'package:fms/features/setting/setting_module.dart';
 
 class SettingPage extends StatefulWidget {
   SettingPage({super.key});

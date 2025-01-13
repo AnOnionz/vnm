@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/features/order/domain/entities/customer_identity.dart';
+import 'package:fms/features/order/domain/entities/customer_identity.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../domain/entities/order_entity.dart';

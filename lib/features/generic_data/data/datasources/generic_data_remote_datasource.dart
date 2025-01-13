@@ -1,6 +1,6 @@
-import 'package:vnm/core/data_source/remote_datasource.dart';
-import 'package:vnm/core/utilities/parser.dart';
-import 'package:vnm/features/generic_data/domain/entities/numeric_sheet_entity.dart';
+import 'package:fms/core/data_source/remote_datasource.dart';
+import 'package:fms/core/utilities/parser.dart';
+import 'package:fms/features/generic_data/domain/entities/numeric_sheet_entity.dart';
 
 abstract class GenericDataRemoteDatasource {
   Future<NumericSheetEntity?> createGenericData(

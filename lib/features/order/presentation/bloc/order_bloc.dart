@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
-import 'package:vnm/features/order/domain/usecases/create_order_usecase.dart';
-import 'package:vnm/features/order/domain/usecases/update_order_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/domain/usecases/create_order_usecase.dart';
+import 'package:fms/features/order/domain/usecases/update_order_usecase.dart';
 
 part 'order_event.dart';
 part 'order_state.dart';

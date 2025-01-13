@@ -5,14 +5,14 @@ import 'package:collection/collection.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/services/network_time/network_time_service.dart';
-import 'package:vnm/features/order/domain/entities/customer_verification_code_entity.dart';
-import 'package:vnm/features/order/domain/entities/verification_code_entity.dart';
-import 'package:vnm/features/order/domain/usecases/get_otp_usecase.dart';
-import 'package:vnm/features/order/domain/usecases/send_otp_usecase.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/services/network_time/network_time_service.dart';
+import 'package:fms/features/order/domain/entities/customer_verification_code_entity.dart';
+import 'package:fms/features/order/domain/entities/verification_code_entity.dart';
+import 'package:fms/features/order/domain/usecases/get_otp_usecase.dart';
+import 'package:fms/features/order/domain/usecases/send_otp_usecase.dart';
 
 import '../../domain/entities/order_entity.dart';
 

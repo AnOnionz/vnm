@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/order/presentation/widgets/product/order_product_info.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/order/presentation/widgets/product/order_product_info.dart';
 
 import '../../../../../core/constant/colors.dart';
 import '../../../../../core/widgets/button/flat.dart';

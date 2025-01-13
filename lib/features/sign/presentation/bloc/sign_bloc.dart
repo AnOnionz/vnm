@@ -3,10 +3,10 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/core/utilities/overlay.dart';
-import 'package:vnm/features/authentication/domain/usecases/change_pass_usecase.dart';
-import 'package:vnm/features/authentication/domain/usecases/login_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/core/utilities/overlay.dart';
+import 'package:fms/features/authentication/domain/usecases/change_pass_usecase.dart';
+import 'package:fms/features/authentication/domain/usecases/login_usecase.dart';
 import '../../../authentication/domain/usecases/logout_usecase.dart';
 import '../../../authentication/presentation/blocs/authentication_bloc.dart';
 

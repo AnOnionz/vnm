@@ -1,4 +1,4 @@
-import 'package:vnm/features/oos/domain/entities/oos_entity.dart';
+import 'package:fms/features/oos/domain/entities/oos_entity.dart';
 
 class OOSModel extends OOSEntity {
   OOSModel(

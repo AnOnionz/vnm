@@ -1,6 +1,6 @@
-import 'package:vnm/core/data_source/remote_datasource.dart';
-import 'package:vnm/core/utilities/parser.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/core/data_source/remote_datasource.dart';
+import 'package:fms/core/utilities/parser.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
 
 import '../../domain/entities/employee_entity.dart';
 import '../../domain/entities/statistic_entity.dart';

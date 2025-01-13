@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/widgets/button/flat.dart';
-import 'package:vnm/features/home/home_module.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/widgets/button/flat.dart';
+import 'package:fms/features/home/home_module.dart';
 
 import '../constant/colors.dart';
 import '../constant/enum.dart';

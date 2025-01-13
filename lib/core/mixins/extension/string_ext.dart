@@ -15,7 +15,7 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:collection/collection.dart';
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/mixins/fx.dart';
 import 'package:intl/intl.dart' as intl;
 
 import '../../constant/enum.dart';

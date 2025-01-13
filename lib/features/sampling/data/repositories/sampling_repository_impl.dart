@@ -1,13 +1,13 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/sampling/data/datasources/sampling_local_datasource.dart';
-import 'package:vnm/features/sampling/data/datasources/sampling_remote_datasource.dart';
-import 'package:vnm/features/sampling/domain/entities/sampling_entity.dart';
-import 'package:vnm/features/sampling/domain/repositories/sampling_repositoty.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/sampling/data/datasources/sampling_local_datasource.dart';
+import 'package:fms/features/sampling/data/datasources/sampling_remote_datasource.dart';
+import 'package:fms/features/sampling/domain/entities/sampling_entity.dart';
+import 'package:fms/features/sampling/domain/repositories/sampling_repositoty.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../core/constant/enum.dart';

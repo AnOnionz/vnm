@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/mixins/extension/widget.ext.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/features/profile/domain/entities/bank_entity.dart';
-import 'package:vnm/features/profile/presentation/cubit/fetch_bank_cubit.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/mixins/extension/widget.ext.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/features/profile/domain/entities/bank_entity.dart';
+import 'package:fms/features/profile/presentation/cubit/fetch_bank_cubit.dart';
 
 import '../../../order/presentation/widgets/customer/customer_text_form_field.dart';
 import '../../domain/entities/user_profile_entity.dart';

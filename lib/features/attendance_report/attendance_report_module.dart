@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/attendance_report/presentation/pages/attendance_report_page.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/attendance_report/presentation/pages/attendance_report_page.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
 
 import '../../routes/routes.dart';
 import '../attendance/attendance_core_module.dart';

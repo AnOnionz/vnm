@@ -1,4 +1,4 @@
-import 'package:vnm/core/usecase/usecase.dart';
+import 'package:fms/core/usecase/usecase.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../../work_place/domain/entities/outlet_entity.dart';

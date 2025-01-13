@@ -1,11 +1,11 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/generic_data/domain/entities/numeric_sheet_entity.dart';
-import 'package:vnm/features/images/presentation/widgets/image_thumbnail_widget.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/generic_data/domain/entities/numeric_sheet_entity.dart';
+import 'package:fms/features/images/presentation/widgets/image_thumbnail_widget.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../../../../core/constant/images.dart';

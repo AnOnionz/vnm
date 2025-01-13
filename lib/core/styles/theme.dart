@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/fonts.dart';
+import 'package:fms/core/constant/fonts.dart';
 
 import '../constant/colors.dart';
 import '../constant/text_styles.dart';

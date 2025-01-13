@@ -1,15 +1,15 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/attendance/data/datasources/attendance_remote_datasource.dart';
-import 'package:vnm/features/attendance/domain/usecases/get_attendance_usecase.dart';
-import 'package:vnm/features/authentication/authentication_module.dart';
-import 'package:vnm/features/general/data/datasource/general_remote_datasource.dart';
-import 'package:vnm/features/general/data/repository/general_repository_impl.dart';
-import 'package:vnm/features/general/domain/usecase/clear_general_usercase.dart';
-import 'package:vnm/features/general/domain/usecase/create_general_usecase.dart';
-import 'package:vnm/features/general/domain/usecase/get_general_usecase.dart';
-import 'package:vnm/features/general/domain/usecase/refresh_general_usecase.dart';
-import 'package:vnm/features/general/presentation/bloc/general_bloc.dart';
-import 'package:vnm/features/profile/profile_module.dart';
+import 'package:fms/features/attendance/data/datasources/attendance_remote_datasource.dart';
+import 'package:fms/features/attendance/domain/usecases/get_attendance_usecase.dart';
+import 'package:fms/features/authentication/authentication_module.dart';
+import 'package:fms/features/general/data/datasource/general_remote_datasource.dart';
+import 'package:fms/features/general/data/repository/general_repository_impl.dart';
+import 'package:fms/features/general/domain/usecase/clear_general_usercase.dart';
+import 'package:fms/features/general/domain/usecase/create_general_usecase.dart';
+import 'package:fms/features/general/domain/usecase/get_general_usecase.dart';
+import 'package:fms/features/general/domain/usecase/refresh_general_usecase.dart';
+import 'package:fms/features/general/presentation/bloc/general_bloc.dart';
+import 'package:fms/features/profile/profile_module.dart';
 
 import '../../routes/core_module.dart';
 import 'data/datasource/general_local_datasource.dart';

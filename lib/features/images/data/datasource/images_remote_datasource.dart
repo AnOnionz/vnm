@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:vnm/core/data_source/remote_datasource.dart';
-import 'package:vnm/features/images/data/models/image_upload_model.dart';
+import 'package:fms/core/data_source/remote_datasource.dart';
+import 'package:fms/features/images/data/models/image_upload_model.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/utilities/parser.dart';

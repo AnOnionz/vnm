@@ -1,16 +1,16 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/core/services/network_time/network_time_service.dart';
-import 'package:vnm/core/usecase/either.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/generic_data/data/datasources/generic_data_local_datasource.dart';
-import 'package:vnm/features/generic_data/data/datasources/generic_data_remote_datasource.dart';
-import 'package:vnm/features/generic_data/domain/entities/numeric_sheet_entity.dart';
-import 'package:vnm/features/generic_data/domain/repositories/generic_data_repository.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/core/services/network_time/network_time_service.dart';
+import 'package:fms/core/usecase/either.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/generic_data/data/datasources/generic_data_local_datasource.dart';
+import 'package:fms/features/generic_data/data/datasources/generic_data_remote_datasource.dart';
+import 'package:fms/features/generic_data/domain/entities/numeric_sheet_entity.dart';
+import 'package:fms/features/generic_data/domain/repositories/generic_data_repository.dart';
 import 'package:uuid/uuid.dart';
 
 class GenericDataRepositoryImpl extends Repository

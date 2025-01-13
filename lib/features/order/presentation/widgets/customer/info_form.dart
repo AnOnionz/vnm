@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/mixins/extension/iterable_ext.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/mixins/extension/iterable_ext.dart';
+import 'package:fms/core/responsive/responsive.dart';
 import '../../../../general/domain/entities/config_entity.dart';
 import '../../../domain/entities/order_entity.dart';
 import 'customer_field.dart';

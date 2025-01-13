@@ -4,13 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/constant/icons.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/advanced_text_field.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/sampling/domain/entities/sampling_value_entity.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/constant/icons.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/advanced_text_field.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/sampling/domain/entities/sampling_value_entity.dart';
 
 class SamplingItem extends StatefulWidget {
   final SamplingValueEntity? entity;

@@ -1,4 +1,4 @@
-import 'package:vnm/features/urgency/domain/entities/urgency_entity.dart';
+import 'package:fms/features/urgency/domain/entities/urgency_entity.dart';
 
 import '../../../general/domain/entities/config_entity.dart';
 import '../../../statistic/domain/entities/employee_entity.dart';

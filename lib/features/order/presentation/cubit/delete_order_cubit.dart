@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
+import 'package:fms/core/errors/failure.dart';
 
 import '../../../general/domain/entities/config_entity.dart';
 import '../../domain/entities/order_entity.dart';

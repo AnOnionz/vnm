@@ -1,10 +1,10 @@
 import 'package:ai_barcode_scanner/ai_barcode_scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/responsive/utilities/flex_extention.dart';
-import 'package:vnm/core/widgets/app_bar.dart';
-import 'package:vnm/core/widgets/app_indicator.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/responsive/utilities/flex_extention.dart';
+import 'package:fms/core/widgets/app_bar.dart';
+import 'package:fms/core/widgets/app_indicator.dart';
 
 class BarcodeScanner extends StatefulWidget {
   const BarcodeScanner({super.key});

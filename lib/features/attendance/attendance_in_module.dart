@@ -1,10 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/features/attendance/attendance_core_module.dart';
-import 'package:vnm/features/attendance/presentation/pages/attendace_locate_page.dart';
-import 'package:vnm/features/attendance/presentation/pages/attendance_flow_page.dart';
-import 'package:vnm/features/attendance/presentation/pages/attendance_page.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/features/attendance/attendance_core_module.dart';
+import 'package:fms/features/attendance/presentation/pages/attendace_locate_page.dart';
+import 'package:fms/features/attendance/presentation/pages/attendance_flow_page.dart';
+import 'package:fms/features/attendance/presentation/pages/attendance_page.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
 
 import '../../routes/routes.dart';
 

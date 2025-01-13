@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/features/urgency/domain/usecases/begin_urgency_usecase.dart';
+import 'package:fms/features/urgency/domain/usecases/begin_urgency_usecase.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../domain/entities/urgency_entity.dart';

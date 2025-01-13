@@ -1,5 +1,5 @@
-import 'package:vnm/features/crawl/data/repositories/crawl_repository_impl.dart';
-import 'package:vnm/features/general/domain/entities/data_entity.dart';
+import 'package:fms/features/crawl/data/repositories/crawl_repository_impl.dart';
+import 'package:fms/features/general/domain/entities/data_entity.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../../../core/usecase/usecase.dart';

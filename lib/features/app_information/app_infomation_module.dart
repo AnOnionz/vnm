@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/app_information/presentation/cubit/app_information_cubit.dart';
+import 'package:fms/features/app_information/presentation/cubit/app_information_cubit.dart';
 
 import '../../routes/core_module.dart';
 import 'presentation/pages/app_information_page.dart';

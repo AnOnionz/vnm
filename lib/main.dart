@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:vnm/core/environment/env.dart';
-import 'package:vnm/core/mixins/common.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/app/app_module.dart';
-import 'package:vnm/features/app/presentation/pages/app.dart';
+import 'package:fms/core/environment/env.dart';
+import 'package:fms/core/mixins/common.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/app/app_module.dart';
+import 'package:fms/features/app/presentation/pages/app.dart';
 
 void main() async {
   await _initializeApp();

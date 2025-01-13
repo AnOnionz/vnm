@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/features/profile/domain/entities/user_profile_entity.dart';
+import 'package:fms/features/profile/domain/entities/user_profile_entity.dart';
 
 class UserProfileInherited extends InheritedWidget {
   const UserProfileInherited({

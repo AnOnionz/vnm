@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/services/network_time/network_time_service.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/services/network_time/network_time_service.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
 
 class ScheduleService {
   final NetworkTimeService timeService = Modular.get<NetworkTimeService>();

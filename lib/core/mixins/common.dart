@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/mixins/fx.dart';
 
 import '../errors/app_exception.dart';
 

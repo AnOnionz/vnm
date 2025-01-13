@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_kronos/flutter_kronos.dart';
-import 'package:vnm/core/mixins/extension/num_ext.dart';
+import 'package:fms/core/mixins/extension/num_ext.dart';
 
 final class NetworkTimeService {
   void startup() {

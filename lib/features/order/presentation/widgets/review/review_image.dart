@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
 import '../../../../../core/constant/enum.dart';
 import '../../../../../core/widgets/share_button.dart';
 import '../../../../general/domain/entities/config_entity.dart';

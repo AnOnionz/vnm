@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:vnm/core/constant/fonts.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/constant/fonts.dart';
+import 'package:fms/core/responsive/responsive.dart';
 
 @immutable
 class AppTextTheme extends ThemeExtension<AppTextTheme> {

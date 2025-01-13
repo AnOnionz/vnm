@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/mixins/extension/string_ext.dart';
-import 'package:vnm/core/utilities/validator.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/mixins/extension/string_ext.dart';
+import 'package:fms/core/utilities/validator.dart';
 
 import '/core/errors/app_exception.dart';
 import '/core/errors/failure.dart';

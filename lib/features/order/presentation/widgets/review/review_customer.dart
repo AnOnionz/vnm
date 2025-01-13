@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/order/presentation/widgets/review/review_container.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/order/presentation/widgets/review/review_container.dart';
 
 import '../../../../../core/constant/colors.dart';
 import '../../../domain/entities/order_entity.dart';

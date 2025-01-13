@@ -1,6 +1,6 @@
-import 'package:vnm/core/data_source/remote_datasource.dart';
-import 'package:vnm/core/utilities/parser.dart';
-import 'package:vnm/features/oos/data/models/oos_model.dart';
+import 'package:fms/core/data_source/remote_datasource.dart';
+import 'package:fms/core/utilities/parser.dart';
+import 'package:fms/features/oos/data/models/oos_model.dart';
 
 abstract class OOSRemoteDatatsource {
   Future<OOSModel?> createOOS({required OOSModel model});

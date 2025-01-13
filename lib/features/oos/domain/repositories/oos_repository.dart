@@ -1,6 +1,6 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/oos/domain/entities/oos_entity.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/oos/domain/entities/oos_entity.dart';
 
 abstract class OosRepository {
   Future<Result<OOSEntity?>> getCurrentOOS({required FeatureEntity feature});

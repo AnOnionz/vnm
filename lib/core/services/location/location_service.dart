@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/utilities/overlay.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/utilities/overlay.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/mixins/extension/widget.ext.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/profile/presentation/widgets/user_profile_inheriterd.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/mixins/extension/widget.ext.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/profile/presentation/widgets/user_profile_inheriterd.dart';
 
 import '../../../order/presentation/widgets/customer/customer_text_form_field.dart';
 import '../../domain/entities/user_profile_entity.dart';

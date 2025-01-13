@@ -1,14 +1,14 @@
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/profile/data/datasources/profile_remote_datasource.dart';
-import 'package:vnm/features/profile/domain/entities/bank_entity.dart';
-import 'package:vnm/features/profile/domain/entities/profile_status_entity.dart';
-import 'package:vnm/features/profile/domain/entities/user_profile_entity.dart';
-import 'package:vnm/features/profile/domain/repositories/profile_repository.dart';
-import 'package:vnm/features/profile/mixin_user.dart';
-import 'package:vnm/features/statistic/domain/entities/employee_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/profile/data/datasources/profile_remote_datasource.dart';
+import 'package:fms/features/profile/domain/entities/bank_entity.dart';
+import 'package:fms/features/profile/domain/entities/profile_status_entity.dart';
+import 'package:fms/features/profile/domain/entities/user_profile_entity.dart';
+import 'package:fms/features/profile/domain/repositories/profile_repository.dart';
+import 'package:fms/features/profile/mixin_user.dart';
+import 'package:fms/features/statistic/domain/entities/employee_entity.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/usecase/either.dart';

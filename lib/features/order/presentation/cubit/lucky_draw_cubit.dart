@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
-import 'package:vnm/features/order/domain/usecases/get_lucky_draw_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
+import 'package:fms/features/order/domain/usecases/get_lucky_draw_usecase.dart';
 
 part 'lucky_draw_state.dart';
 

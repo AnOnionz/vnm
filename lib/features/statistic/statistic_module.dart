@@ -1,12 +1,12 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
-import 'package:vnm/features/statistic/data/datasources/statistic_remote_datasource.dart';
-import 'package:vnm/features/statistic/data/repositories/statistic_repository_impl.dart';
-import 'package:vnm/features/statistic/domain/entities/employee_entity.dart';
-import 'package:vnm/features/statistic/domain/usecases/fetch_employee_statistic_usecase.dart';
-import 'package:vnm/features/statistic/domain/usecases/fetch_team_members_usecase.dart';
-import 'package:vnm/features/statistic/presentation/bloc/statistic_bloc.dart';
-import 'package:vnm/features/statistic/presentation/cubit/team_members_cubit.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/statistic/data/datasources/statistic_remote_datasource.dart';
+import 'package:fms/features/statistic/data/repositories/statistic_repository_impl.dart';
+import 'package:fms/features/statistic/domain/entities/employee_entity.dart';
+import 'package:fms/features/statistic/domain/usecases/fetch_employee_statistic_usecase.dart';
+import 'package:fms/features/statistic/domain/usecases/fetch_team_members_usecase.dart';
+import 'package:fms/features/statistic/presentation/bloc/statistic_bloc.dart';
+import 'package:fms/features/statistic/presentation/cubit/team_members_cubit.dart';
 
 import '../../routes/routes.dart';
 import '../order/order_module.dart';

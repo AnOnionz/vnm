@@ -1,16 +1,16 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
-import 'package:vnm/features/oos/data/datasources/oos_local_datasource.dart';
-import 'package:vnm/features/oos/data/datasources/oos_remote_datatsource.dart';
-import 'package:vnm/features/oos/data/repositories/oos_repository_impl.dart';
-import 'package:vnm/features/oos/domain/usecases/create_oos_usecase.dart';
-import 'package:vnm/features/oos/domain/usecases/get_current_oos_usecase.dart';
-import 'package:vnm/features/oos/domain/usecases/get_oos_no_synced_usecase.dart';
-import 'package:vnm/features/oos/domain/usecases/get_oos_not_completed_usecase.dart';
-import 'package:vnm/features/oos/presentation/cubit/fetch_oos_cubit.dart';
-import 'package:vnm/features/oos/presentation/cubit/oos_cubit.dart';
-import 'package:vnm/features/oos/presentation/pages/oos_page.dart';
-import 'package:vnm/routes/routes.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/oos/data/datasources/oos_local_datasource.dart';
+import 'package:fms/features/oos/data/datasources/oos_remote_datatsource.dart';
+import 'package:fms/features/oos/data/repositories/oos_repository_impl.dart';
+import 'package:fms/features/oos/domain/usecases/create_oos_usecase.dart';
+import 'package:fms/features/oos/domain/usecases/get_current_oos_usecase.dart';
+import 'package:fms/features/oos/domain/usecases/get_oos_no_synced_usecase.dart';
+import 'package:fms/features/oos/domain/usecases/get_oos_not_completed_usecase.dart';
+import 'package:fms/features/oos/presentation/cubit/fetch_oos_cubit.dart';
+import 'package:fms/features/oos/presentation/cubit/oos_cubit.dart';
+import 'package:fms/features/oos/presentation/pages/oos_page.dart';
+import 'package:fms/routes/routes.dart';
 
 class OOSModule extends Module {
   static const String route = '/outOfStockStatus/';

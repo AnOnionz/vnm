@@ -1,4 +1,4 @@
-import 'package:vnm/features/crawl/domain/entities/crawl_quantity_entity.dart';
+import 'package:fms/features/crawl/domain/entities/crawl_quantity_entity.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../../general/domain/entities/config_entity.dart';

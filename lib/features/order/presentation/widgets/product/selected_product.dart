@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
-import 'package:vnm/features/order/presentation/widgets/product/order_product_info.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/presentation/widgets/product/order_product_info.dart';
 
 import '../../../../../core/styles/theme.dart';
 import '../../../../../core/widgets/empty_widget.dart';

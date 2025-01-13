@@ -1,10 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/crawl/data/datasources/crawl_local_datasource.dart';
-import 'package:vnm/features/crawl/data/repositories/crawl_repository_impl.dart';
-import 'package:vnm/features/crawl/domain/usecases/crawl_data_usecase.dart';
-import 'package:vnm/features/crawl/domain/usecases/get_quantities_not_completed_usecase.dart';
-import 'package:vnm/features/crawl/domain/usecases/get_quantities_usecase.dart';
-import 'package:vnm/features/crawl/domain/usecases/quantities_no_synced_usecase.dart';
+import 'package:fms/features/crawl/data/datasources/crawl_local_datasource.dart';
+import 'package:fms/features/crawl/data/repositories/crawl_repository_impl.dart';
+import 'package:fms/features/crawl/domain/usecases/crawl_data_usecase.dart';
+import 'package:fms/features/crawl/domain/usecases/get_quantities_not_completed_usecase.dart';
+import 'package:fms/features/crawl/domain/usecases/get_quantities_usecase.dart';
+import 'package:fms/features/crawl/domain/usecases/quantities_no_synced_usecase.dart';
 
 import '../../routes/routes.dart';
 import '../home/domain/entities/general_item_data.dart';

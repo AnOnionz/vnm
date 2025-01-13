@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/urgency_team/presentation/pages/urgency_team_page.dart';
-import 'package:vnm/routes/core_module.dart';
-import 'package:vnm/routes/routes.dart';
+import 'package:fms/features/urgency_team/presentation/pages/urgency_team_page.dart';
+import 'package:fms/routes/core_module.dart';
+import 'package:fms/routes/routes.dart';
 
 import '../home/domain/entities/general_item_data.dart';
 import 'data/datasources/urgency_team_remote_datasource.dart';

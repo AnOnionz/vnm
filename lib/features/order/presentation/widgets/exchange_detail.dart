@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
-import 'package:vnm/features/order/presentation/widgets/review/review_gift_luckydraw.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/order/domain/entities/customer_info_with_luckydraw_entity.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/presentation/widgets/review/review_gift_luckydraw.dart';
 
 import '../../../../core/styles/theme.dart';
 import 'review/review_customer.dart';

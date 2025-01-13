@@ -1,6 +1,6 @@
-import 'package:vnm/features/work_place/domain/entities/booth_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/project_entity.dart';
+import 'package:fms/features/work_place/domain/entities/booth_entity.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/features/work_place/domain/entities/project_entity.dart';
 
 class WorkPlaceEntity {
   final ProjectEntity? project;

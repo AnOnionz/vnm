@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/matter_container.dart';
-import 'package:vnm/features/images/presentation/widgets/image_view.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/matter_container.dart';
+import 'package:fms/features/images/presentation/widgets/image_view.dart';
 
 import '../../features/general/domain/entities/config_entity.dart';
 import '../constant/colors.dart';

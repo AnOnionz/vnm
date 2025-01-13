@@ -1,4 +1,4 @@
-import 'package:vnm/features/urgency/data/models/urgency_model.dart';
+import 'package:fms/features/urgency/data/models/urgency_model.dart';
 
 import '../../../../core/data_source/remote_datasource.dart';
 import '../../../../core/utilities/parser.dart';

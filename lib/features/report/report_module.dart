@@ -1,14 +1,14 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
-import 'package:vnm/features/images/image_module.dart';
-import 'package:vnm/features/report/data/datasources/report_local_datasource.dart';
-import 'package:vnm/features/report/data/datasources/report_remote_datasource.dart';
-import 'package:vnm/features/report/data/repositories/report_repository_impl.dart';
-import 'package:vnm/features/report/domain/usecases/create_photos_usecase.dart';
-import 'package:vnm/features/report/domain/usecases/get_photos_usecase.dart';
-import 'package:vnm/features/report/presentation/cubit/report_cubit.dart';
-import 'package:vnm/features/report/presentation/pages/report_page.dart';
-import 'package:vnm/routes/core_module.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/features/images/image_module.dart';
+import 'package:fms/features/report/data/datasources/report_local_datasource.dart';
+import 'package:fms/features/report/data/datasources/report_remote_datasource.dart';
+import 'package:fms/features/report/data/repositories/report_repository_impl.dart';
+import 'package:fms/features/report/domain/usecases/create_photos_usecase.dart';
+import 'package:fms/features/report/domain/usecases/get_photos_usecase.dart';
+import 'package:fms/features/report/presentation/cubit/report_cubit.dart';
+import 'package:fms/features/report/presentation/pages/report_page.dart';
+import 'package:fms/routes/core_module.dart';
 
 import '../../routes/routes.dart';
 import 'domain/usecases/get_photos_not_completed_usecase.dart';

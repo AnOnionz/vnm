@@ -1,9 +1,9 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/generic_data/generic_data_module.dart';
-import 'package:vnm/features/oos/oos_module.dart';
-import 'package:vnm/features/sampling/sampling_module.dart';
-import 'package:vnm/features/sync/sync_module.dart';
-import 'package:vnm/features/urgency/urgency_module.dart';
+import 'package:fms/features/generic_data/generic_data_module.dart';
+import 'package:fms/features/oos/oos_module.dart';
+import 'package:fms/features/sampling/sampling_module.dart';
+import 'package:fms/features/sync/sync_module.dart';
+import 'package:fms/features/urgency/urgency_module.dart';
 
 import '../../routes/routes.dart';
 import '../crawl/crawl.module.dart';

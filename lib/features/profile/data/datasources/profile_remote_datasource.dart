@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:vnm/features/profile/domain/entities/user_profile_entity.dart';
-import 'package:vnm/features/work_place/domain/entities/outlet_entity.dart';
+import 'package:fms/features/profile/domain/entities/user_profile_entity.dart';
+import 'package:fms/features/work_place/domain/entities/outlet_entity.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../core/utilities/parser.dart';
 import '../../../images/data/datasource/images_remote_datasource.dart';

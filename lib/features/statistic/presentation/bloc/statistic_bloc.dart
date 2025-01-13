@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/features/statistic/domain/entities/statistic_entity.dart';
-import 'package:vnm/features/statistic/domain/usecases/fetch_employee_statistic_usecase.dart';
+import 'package:fms/features/statistic/domain/entities/statistic_entity.dart';
+import 'package:fms/features/statistic/domain/usecases/fetch_employee_statistic_usecase.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/usecase/either.dart';

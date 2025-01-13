@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/urgency/data/datasources/urgency_remote_datasource.dart';
-import 'package:vnm/features/urgency/data/repositories/urgency_repository_impl.dart';
-import 'package:vnm/features/urgency/domain/usecases/current_urgency_usecase.dart';
-import 'package:vnm/features/urgency/presentation/cubit/urgency_cubit.dart';
+import 'package:fms/features/urgency/data/datasources/urgency_remote_datasource.dart';
+import 'package:fms/features/urgency/data/repositories/urgency_repository_impl.dart';
+import 'package:fms/features/urgency/domain/usecases/current_urgency_usecase.dart';
+import 'package:fms/features/urgency/presentation/cubit/urgency_cubit.dart';
 
 import '../../routes/routes.dart';
 import '../home/domain/entities/general_item_data.dart';

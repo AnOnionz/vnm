@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/mixins/fx.dart';
 import 'package:isar/isar.dart';
 import 'package:isar/src/isar_connect_api.dart';
 import 'package:path/path.dart' as p;

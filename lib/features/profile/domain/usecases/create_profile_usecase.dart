@@ -1,6 +1,6 @@
-import 'package:vnm/core/mixins/extension/func_ext.dart';
-import 'package:vnm/core/usecase/usecase.dart';
-import 'package:vnm/features/profile/domain/entities/user_profile_entity.dart';
+import 'package:fms/core/mixins/extension/func_ext.dart';
+import 'package:fms/core/usecase/usecase.dart';
+import 'package:fms/features/profile/domain/entities/user_profile_entity.dart';
 
 import '../../../../core/constant/type_def.dart';
 import '../../data/repositories/profile_repository_impl.dart';

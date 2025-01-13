@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
 import 'package:rive/rive.dart';
 
 class AppIndicator extends StatelessWidget {

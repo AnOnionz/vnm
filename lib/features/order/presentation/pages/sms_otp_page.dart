@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/mixins/extension/context_ext.dart';
-import 'package:vnm/core/mixins/extension/string_ext.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/order/domain/entities/order_entity.dart';
-import 'package:vnm/features/order/presentation/cubit/verification_code_cubit.dart';
+import 'package:fms/core/mixins/extension/context_ext.dart';
+import 'package:fms/core/mixins/extension/string_ext.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/order/domain/entities/order_entity.dart';
+import 'package:fms/features/order/presentation/cubit/verification_code_cubit.dart';
 import 'package:pinput/pinput.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 

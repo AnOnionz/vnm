@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/mixins/fx.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/mixins/fx.dart';
 
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
 
 import '../../../domain/entities/order_entity.dart';
 

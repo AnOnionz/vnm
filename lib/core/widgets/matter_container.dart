@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vnm/core/cache_image_network/cached_image.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/utilities/flex_extention.dart';
+import 'package:fms/core/cache_image_network/cached_image.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/utilities/flex_extention.dart';
 
 import '../../features/general/domain/entities/config_entity.dart';
 import '../constant/images.dart';

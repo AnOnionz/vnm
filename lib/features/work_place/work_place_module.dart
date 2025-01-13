@@ -1,16 +1,16 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/general/general_module.dart';
-import 'package:vnm/features/profile/profile_module.dart';
-import 'package:vnm/features/sign/sign_module.dart';
-import 'package:vnm/features/sync/sync_module.dart';
-import 'package:vnm/features/work_place/data/datasources/work_place_datasource.dart';
-import 'package:vnm/features/work_place/data/repositories/work_place_repository_impl.dart';
-import 'package:vnm/features/work_place/domain/entities/work_place_entity.dart';
-import 'package:vnm/features/work_place/domain/usecases/get_projects_usecase.dart';
-import 'package:vnm/features/work_place/presentation/bloc/fetch_work_place_bloc.dart';
-import 'package:vnm/features/work_place/presentation/bloc/work_place_bloc.dart';
+import 'package:fms/features/general/general_module.dart';
+import 'package:fms/features/profile/profile_module.dart';
+import 'package:fms/features/sign/sign_module.dart';
+import 'package:fms/features/sync/sync_module.dart';
+import 'package:fms/features/work_place/data/datasources/work_place_datasource.dart';
+import 'package:fms/features/work_place/data/repositories/work_place_repository_impl.dart';
+import 'package:fms/features/work_place/domain/entities/work_place_entity.dart';
+import 'package:fms/features/work_place/domain/usecases/get_projects_usecase.dart';
+import 'package:fms/features/work_place/presentation/bloc/fetch_work_place_bloc.dart';
+import 'package:fms/features/work_place/presentation/bloc/work_place_bloc.dart';
 
-import 'package:vnm/features/work_place/presentation/pages/work_place_page.dart';
+import 'package:fms/features/work_place/presentation/pages/work_place_page.dart';
 
 import '../../routes/routes.dart';
 

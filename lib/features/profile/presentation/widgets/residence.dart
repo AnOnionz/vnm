@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/mapper.dart';
-import 'package:vnm/core/mixins/extension/widget.ext.dart';
-import 'package:vnm/features/profile/presentation/cubit/fetch_province_cubit.dart';
-import 'package:vnm/features/profile/presentation/widgets/user_profile_inheriterd.dart';
+import 'package:fms/core/constant/mapper.dart';
+import 'package:fms/core/mixins/extension/widget.ext.dart';
+import 'package:fms/features/profile/presentation/cubit/fetch_province_cubit.dart';
+import 'package:fms/features/profile/presentation/widgets/user_profile_inheriterd.dart';
 
 import '../../../order/presentation/widgets/customer/customer_text_form_field.dart';
 import '../../../work_place/domain/entities/outlet_entity.dart';

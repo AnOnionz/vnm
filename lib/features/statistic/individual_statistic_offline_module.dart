@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/features/statistic/presentation/pages/statistic_page.dart';
-import 'package:vnm/features/statistic/statistic_module.dart';
+import 'package:fms/features/statistic/presentation/pages/statistic_page.dart';
+import 'package:fms/features/statistic/statistic_module.dart';
 
 import '../../routes/routes.dart';
 import '../home/domain/entities/general_item_data.dart';

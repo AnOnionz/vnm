@@ -1,18 +1,18 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
-import 'package:vnm/core/constant/enum.dart';
-import 'package:vnm/core/constant/type_def.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/repository/repository.dart';
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
-import 'package:vnm/features/general/presentation/page/mixin_general.dart';
-import 'package:vnm/features/images/data/datasource/delete_image_local_remote_datasource.dart';
-import 'package:vnm/features/images/data/datasource/delete_image_remote_datasource.dart';
-import 'package:vnm/features/report/data/datasources/report_local_datasource.dart';
-import 'package:vnm/features/report/data/datasources/report_remote_datasource.dart';
-import 'package:vnm/features/report/domain/entities/photo_entity.dart';
-import 'package:vnm/features/report/domain/repositories/report_repository.dart';
+import 'package:fms/core/constant/enum.dart';
+import 'package:fms/core/constant/type_def.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/repository/repository.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/presentation/page/mixin_general.dart';
+import 'package:fms/features/images/data/datasource/delete_image_local_remote_datasource.dart';
+import 'package:fms/features/images/data/datasource/delete_image_remote_datasource.dart';
+import 'package:fms/features/report/data/datasources/report_local_datasource.dart';
+import 'package:fms/features/report/data/datasources/report_remote_datasource.dart';
+import 'package:fms/features/report/domain/entities/photo_entity.dart';
+import 'package:fms/features/report/domain/repositories/report_repository.dart';
 
 import '../../../../core/usecase/either.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/attendance/domain/entities/attendance_entity.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/attendance/domain/entities/attendance_entity.dart';
 
 import '../../../../core/cache_image_network/cached_image.dart';
 import '../../../../core/constant/colors.dart';

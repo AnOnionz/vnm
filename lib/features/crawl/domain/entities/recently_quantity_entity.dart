@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:vnm/features/general/domain/entities/config_entity.dart';
+import 'package:fms/features/general/domain/entities/config_entity.dart';
 
 class RecentlyQuantityEntity {
   final FeatureQuantity featureQuantity;

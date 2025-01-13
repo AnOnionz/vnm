@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/features/profile/presentation/widgets/user_profile_inheriterd.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/features/profile/presentation/widgets/user_profile_inheriterd.dart';
 import '../../../../core/constant/enum.dart';
 import '../../../order/presentation/widgets/customer/customer_text_form_field.dart';
 import '../../domain/entities/user_profile_entity.dart';

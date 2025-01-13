@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/features/profile/domain/usecases/get_districts_usecase.dart';
+import 'package:fms/features/profile/domain/usecases/get_districts_usecase.dart';
 
 import '../../../work_place/domain/entities/outlet_entity.dart';
 

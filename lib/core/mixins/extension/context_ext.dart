@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart' show CupertinoTheme, CupertinoThemeData;
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vnm/core/constant/text_styles.dart';
+import 'package:fms/core/constant/text_styles.dart';
 
 import '/core/localization/locale_manager.dart';
 import '/core/mixins/extension/responsive_ui.dart';

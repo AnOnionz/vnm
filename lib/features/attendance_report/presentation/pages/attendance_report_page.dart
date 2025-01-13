@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vnm/core/mixins/fx.dart';
-import 'package:vnm/core/responsive/responsive.dart';
-import 'package:vnm/core/widgets/app_bar.dart';
-import 'package:vnm/features/attendance_report/presentation/bloc/attendance_report_bloc.dart';
-import 'package:vnm/features/home/domain/entities/general_item_data.dart';
+import 'package:fms/core/mixins/fx.dart';
+import 'package:fms/core/responsive/responsive.dart';
+import 'package:fms/core/widgets/app_bar.dart';
+import 'package:fms/features/attendance_report/presentation/bloc/attendance_report_bloc.dart';
+import 'package:fms/features/home/domain/entities/general_item_data.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../../../../core/constant/icons.dart';

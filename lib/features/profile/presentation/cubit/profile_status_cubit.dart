@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vnm/core/errors/failure.dart';
-import 'package:vnm/features/profile/domain/entities/profile_status_entity.dart';
-import 'package:vnm/features/profile/domain/usecases/get_profile_status_usecase.dart';
+import 'package:fms/core/errors/failure.dart';
+import 'package:fms/features/profile/domain/entities/profile_status_entity.dart';
+import 'package:fms/features/profile/domain/usecases/get_profile_status_usecase.dart';
 
 part 'profile_status_state.dart';
 

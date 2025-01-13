@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vnm/core/constant/colors.dart';
-import 'package:vnm/core/responsive/responsive.dart';
+import 'package:fms/core/constant/colors.dart';
+import 'package:fms/core/responsive/responsive.dart';
 
 class CustomCheckbox extends StatefulWidget {
   const CustomCheckbox({
